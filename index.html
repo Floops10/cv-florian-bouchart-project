@@ -75,7 +75,7 @@
         }
 
         body {
-            background: var(--bg-primary);
+            background-color: var(--bg-primary);
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
@@ -97,6 +97,14 @@
                 linear-gradient(to bottom, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        /* CORRECTION FOND MODE CLAIR */
+        body.sober-mode .grid-background {
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
         }
 
         .cursor-glow {
@@ -1404,9 +1412,9 @@
                 </p>
 
                 <div class="cta-container">
-                    <a href="https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf" target="_blank" class="btn btn-primary" id="cvLink">
+                    <a href="https://image2url.com/r2/default/documents/1771518211971-de4865a0-955a-455e-8d50-28aede8ab6a1.pdf" target="_blank" class="btn btn-primary" id="cvLink">
                         <i data-lucide="file-text" width="20"></i>
-                        <span class="cv-text" data-translate="btn_cv">Voir mon CV PMO</span>
+                        <span class="cv-text" data-translate="btn_cv">Voir mon CV</span>
                     </a>
                     <a href="https://www.linkedin.com/in/florian-bouchart" target="_blank" class="btn btn-secondary">
                         <i data-lucide="linkedin" width="20"></i>
@@ -1966,8 +1974,8 @@
                 availability_badge: "🟢 DISPONIBLE JUILLET 2026",
                 hero_badge: "PMO • Chef de Projet • Gouvernance & Data",
                 hero_description: "Master 2 en Gestion de Projet passionné par la structuration, l'analyse et la data. J'aide les entreprises à <span class=\"highlight\">sécuriser l'exécution</span> de leurs projets complexes, <span class=\"highlight\">coordonner les parties prenantes</span> et produire des <span class=\"highlight\">reportings fiables</span> pour la prise de décision.",
-                btn_cv: "Voir mon CV PMO",
-                cv_link: "https://image2url.com/r2/default/documents/1771509383048-d973961c-9a79-41df-93b7-2c19fc54c08f.pdf",
+                btn_cv: "Voir mon CV",
+                cv_link: "https://image2url.com/r2/default/documents/1771518211971-de4865a0-955a-455e-8d50-28aede8ab6a1.pdf",
                 nav_home: "Accueil",
                 nav_career: "Parcours",
                 nav_skills: "Atouts",
@@ -2112,8 +2120,8 @@
                 availability_badge: "🟢 AVAILABLE JULY 2026",
                 hero_badge: "PMO • Project Manager • Governance & Data",
                 hero_description: "Project Management Master 2 graduate with a strong affinity for structuring, analytics, and data. I help companies <span class=\"highlight\">secure the execution</span> of complex projects, <span class=\"highlight\">coordinate stakeholders</span>, and produce <span class=\"highlight\">reliable reporting</span> for decision making.",
-                btn_cv: "View PMO Resume",
-                cv_link: "https://image2url.com/r2/default/documents/1771509404698-73bd3b1c-401e-4e45-a83d-5c40c38d9f6b.pdf",
+                btn_cv: "View Resume",
+                cv_link: "https://image2url.com/r2/default/documents/1771518176562-1cde6d94-055d-4ce0-8fb0-4f2b7de820a0.pdf",
                 nav_home: "Home",
                 nav_career: "Career",
                 nav_skills: "Strengths",
