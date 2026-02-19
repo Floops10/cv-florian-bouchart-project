@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florian Bouchart - Portfolio PMO & Chef de Projet</title>
+    <title>Florian Bouchart - Portfolio Gestion de Projet</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
             --glass-bg: rgba(30, 41, 59, 0.6); 
             --glass-border: rgba(255, 255, 255, 0.08);
             
-            /* Bordures */
+            /* Bordures colorées par défaut */
             --card-border: rgba(255, 107, 53, 0.2);
             
             /* Modales & Dock */
@@ -58,24 +58,28 @@
 
         /* --- THÈME CLAIR (MODE SOBRE) --- */
         body.sober-mode {
+            /* Fond gris très clair "Papier" */
             --bg-primary: #f2f2f7;
             --bg-secondary: #ffffff;
             
+            /* Cartes blanches et propres */
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(0, 0, 0, 0.05);
             --card-border: rgba(0, 0, 0, 0.08);
             
             --modal-bg: rgba(255, 255, 255, 0.98);
             
+            /* Texte sombre lisible */
             --text-primary: #1d1d1f;
             --text-secondary: #515155;
             
+            /* Dock clair */
             --dock-bg: rgba(255, 255, 255, 0.9);
             --dock-border: rgba(0, 0, 0, 0.1);
         }
 
         body {
-            background-color: var(--bg-primary);
+            background: var(--bg-primary);
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
@@ -97,14 +101,6 @@
                 linear-gradient(to bottom, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
-            transition: all 0.5s ease;
-        }
-
-        /* CORRECTION FOND MODE CLAIR */
-        body.sober-mode .grid-background {
-            background-image: 
-                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
         }
 
         .cursor-glow {
@@ -139,28 +135,19 @@
         }
 
         .orb-1 {
-            top: 5%;
-            left: 5%;
-            width: 40vw;
-            height: 40vw;
+            top: 5%; left: 5%; width: 40vw; height: 40vw;
             background: linear-gradient(135deg, var(--orange), var(--pink));
             animation: float 10s ease-in-out infinite;
         }
 
         .orb-2 {
-            top: 40%;
-            right: 5%;
-            width: 50vw;
-            height: 50vw;
+            top: 40%; right: 5%; width: 50vw; height: 50vw;
             background: linear-gradient(135deg, var(--teal), var(--purple));
             animation: float 12s ease-in-out infinite 2s;
         }
 
         .orb-3 {
-            bottom: 5%;
-            left: 20%;
-            width: 45vw;
-            height: 45vw;
+            bottom: 5%; left: 20%; width: 45vw; height: 45vw;
             background: linear-gradient(135deg, var(--purple), var(--yellow));
             animation: float 14s ease-in-out infinite 4s;
         }
@@ -217,10 +204,7 @@
         }
 
         .profile-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
         }
 
         @keyframes profilePulse {
@@ -266,46 +250,24 @@
         }
 
         .cta-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: var(--font-display);
-            position: relative;
-            overflow: hidden; 
-            z-index: 1;
+            display: inline-flex; align-items: center; gap: 0.8rem;
+            padding: 1.2rem 2.5rem; font-size: 1.1rem; font-weight: 700;
+            border-radius: 1rem; text-decoration: none; transition: all 0.3s ease;
+            font-family: var(--font-display); position: relative; overflow: hidden; z-index: 1;
         }
 
         .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
+            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            border-radius: 50%; background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%); transition: width 0.6s ease, height 0.6s ease;
             z-index: -1;
         }
 
-        .btn:hover::before {
-            width: 500px;
-            height: 500px;
-        }
+        .btn:hover::before { width: 500px; height: 500px; }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--orange), var(--pink));
@@ -319,34 +281,21 @@
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid rgba(0, 212, 170, 0.5);
-            backdrop-filter: blur(5px);
+            background: transparent; color: var(--text-primary);
+            border: 2px solid rgba(0, 212, 170, 0.5); backdrop-filter: blur(5px);
         }
 
         .btn-secondary:hover {
-            border-color: var(--teal);
-            transform: translateY(-5px);
+            border-color: var(--teal); transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2);
         }
 
         .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-secondary);
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: color 0.3s;
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+            color: var(--text-secondary); animation: bounce 2s infinite;
+            cursor: pointer; opacity: 0.7; transition: color 0.3s;
         }
-        
-        .scroll-down:hover {
-            color: var(--orange);
-            opacity: 1;
-        }
+        .scroll-down:hover { color: var(--orange); opacity: 1; }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
@@ -358,47 +307,22 @@
            4. SECTIONS & GRILLES
            ========================================================================== */
         
-        section {
-            padding: clamp(4rem, 8vw, 8rem) 1rem;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
+        section { padding: clamp(4rem, 8vw, 8rem) 1rem; position: relative; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900; margin-bottom: 1rem; letter-spacing: -0.02em;
         }
-
-        .section-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--text-secondary);
-        }
+        .section-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); }
         
-        .experience-grid, 
-        .vision-grid, 
-        .skills-grid {
-            display: grid;
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        .experience-grid, .vision-grid, .skills-grid {
+            display: grid; gap: 2rem; max-width: 1400px; margin: 0 auto;
             grid-template-columns: 1fr;
         }
 
         @media (min-width: 768px) {
-            .experience-grid, 
-            .vision-grid, 
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .experience-grid, .vision-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        
         @media (min-width: 1200px) {
             .experience-grid { grid-template-columns: repeat(3, 1fr); }
             .vision-grid { grid-template-columns: repeat(4, 1fr); }
@@ -411,20 +335,13 @@
         
         .card-glass {
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1.5rem;
+            padding: 2rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        .experience-card:hover, 
-        .vision-card:hover, 
-        .skill-category:hover {
+        .experience-card:hover, .vision-card:hover, .skill-category:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: var(--orange);
             box-shadow: 0 20px 50px rgba(255, 107, 53, 0.15), inset 0 0 20px rgba(255, 107, 53, 0.05);
@@ -432,748 +349,269 @@
         }
 
         /* EXP */
-        .exp-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
+        .exp-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
         .exp-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: white;
-            background: #FFFFFF;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            overflow: hidden;
-            padding: 2px;
+            width: 70px; height: 70px; border-radius: 1.2rem;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            color: white; background: #FFFFFF; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            overflow: hidden; padding: 2px;
         }
+        .exp-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .exp-icon.no-img { background: linear-gradient(135deg, #ff6b35, #f77f00); padding: 0; }
         
-        .exp-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        .exp-icon.no-img {
-            background: linear-gradient(135deg, #ff6b35, #f77f00); 
-            padding: 0;
-        }
-        
-        .exp-info h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            line-height: 1.2;
-        }
-
-        .exp-period {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .exp-company {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .exp-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .exp-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
+        .exp-info h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.2; }
+        .exp-period { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.3rem; }
+        .exp-company { font-weight: 600; font-size: 1.1rem; color: var(--text-primary); }
+        .exp-description { color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1.5rem; }
+        .exp-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .exp-tag {
-            padding: 0.4rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            color: var(--orange);
-            transition: all 0.3s;
+            padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600;
+            background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3);
+            color: var(--orange); transition: all 0.3s;
         }
-
-        .exp-tag:hover {
-            background: var(--orange);
-            color: white;
-        }
+        .exp-tag:hover { background: var(--orange); color: white; }
 
         /* VISION */
         .vision-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 65px; height: 65px; border-radius: 1.2rem;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+            color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-
-        .vision-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .vision-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
+        .vision-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .vision-card p { color: var(--text-secondary); line-height: 1.7; }
 
         /* ==========================================================================
            6. ATOUTS & MODALES
            ========================================================================== */
         
         .traits-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
             gap: 2rem;
         }
-
-        .trait-card.strengths {
-            border-left: 4px solid var(--teal);
-        }
-
-        .trait-card.weaknesses {
-            border-left: 4px solid var(--yellow);
-        }
-
-        .trait-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
+        .trait-card.strengths { border-left: 4px solid var(--teal); }
+        .trait-card.weaknesses { border-left: 4px solid var(--yellow); }
+        .trait-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
         
         .trait-badge {
-            padding: 0.5rem 1.2rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
+            padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em;
         }
-
-        .trait-badge.green {
-            background: rgba(0, 212, 170, 0.15);
-            color: var(--teal);
-            border: 1px solid rgba(0, 212, 170, 0.3);
-        }
-
-        .trait-badge.amber {
-            background: rgba(255, 190, 11, 0.15);
-            color: var(--yellow);
-            border: 1px solid rgba(255, 190, 11, 0.3);
-        }
+        .trait-badge.green { background: rgba(0, 212, 170, 0.15); color: var(--teal); border: 1px solid rgba(0, 212, 170, 0.3); }
+        .trait-badge.amber { background: rgba(255, 190, 11, 0.15); color: var(--yellow); border: 1px solid rgba(255, 190, 11, 0.3); }
         
-        .trait-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
+        .trait-list { display: flex; flex-direction: column; gap: 1rem; }
         .trait-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid transparent;
+            display: flex; align-items: flex-start; gap: 1rem; padding: 1rem;
+            background: rgba(255, 255, 255, 0.03); border-radius: 1rem;
+            transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent;
         }
-
         .trait-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px); background: rgba(255, 255, 255, 0.08);
             border-color: rgba(255, 255, 255, 0.1);
         }
-
-        .trait-item i {
-            margin-top: 3px;
-            transition: transform 0.3s;
-        }
-
-        .trait-item:hover i {
-            transform: scale(1.2);
-        }
-
-        .trait-item span {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+        .trait-item i { margin-top: 3px; transition: transform 0.3s; }
+        .trait-item:hover i { transform: scale(1.2); }
+        .trait-item span { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; }
 
         /* Modal */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85); z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(10px);
         }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
         
         .modal-content {
-            background: var(--modal-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem;
-            border-radius: 2rem;
-            max-width: 650px;
-            width: 90%;
-            transform: translateY(30px);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+            background: var(--modal-bg); border: 1px solid var(--glass-border);
+            padding: 3rem; border-radius: 2rem; max-width: 650px; width: 90%;
+            transform: translateY(30px); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative; box-shadow: 0 25px 80px rgba(0,0,0,0.6);
         }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
         
         .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255, 255, 255, 0.1);
+            border: none; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary);
+            cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;
         }
-
-        .modal-close:hover {
-            background: var(--orange);
-            color: white;
-            transform: rotate(90deg);
-        }
+        .modal-close:hover { background: var(--orange); color: white; transform: rotate(90deg); }
         
         .modal-title {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem;
             background: linear-gradient(90deg, var(--orange), var(--teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        .modal-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
+        .modal-text { color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
 
         /* ==========================================================================
            7. SKILLS & TIMELINE
            ========================================================================== */
         
         .skill-category h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 0.8rem;
+            font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin-bottom: 1.5rem;
         }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .skill-tag {
-            padding: 0.5rem 1.1rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            transition: all 0.3s;
+            padding: 0.5rem 1.1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 500;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary); transition: all 0.3s;
         }
-
         .skill-tag:hover {
-            background: var(--purple);
-            color: white;
-            transform: scale(1.1);
-            border-color: transparent;
-            box-shadow: 0 0 20px rgba(106, 76, 147, 0.5);
+            background: var(--purple); color: white; transform: scale(1.1);
+            border-color: transparent; box-shadow: 0 0 20px rgba(106, 76, 147, 0.5);
         }
 
         /* Timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .timeline { display: flex; flex-direction: column; gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .timeline-item {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-radius: 1.5rem; overflow: hidden; transition: all 0.3s;
         }
-
-        .timeline-item:hover {
-            border-color: var(--purple);
-            box-shadow: 0 0 40px rgba(106, 76, 147, 0.15);
-        }
+        .timeline-item:hover { border-color: var(--purple); box-shadow: 0 0 40px rgba(106, 76, 147, 0.15); }
         
         .timeline-header {
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            gap: 1rem;
-            flex-wrap: wrap;
-            transition: background 0.3s;
+            padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; gap: 1rem; flex-wrap: wrap; transition: background 0.3s;
         }
-
-        .timeline-header:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
+        .timeline-header:hover { background: rgba(255, 255, 255, 0.03); }
         
         .timeline-badge {
-            width: 65px;
-            height: 65px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: white;
-            flex-shrink: 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            background: white;
-            overflow: hidden;
-            padding: 2px;
+            width: 65px; height: 65px; border-radius: 1.2rem; display: flex; align-items: center;
+            justify-content: center; font-family: var(--font-display); font-size: 1.2rem; font-weight: 900;
+            color: white; flex-shrink: 0; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            background: white; overflow: hidden; padding: 2px;
         }
-
-        .timeline-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .timeline-badge.no-logo {
-            background: linear-gradient(135deg, var(--teal), var(--purple));
-            padding: 0;
-        }
+        .timeline-badge img { width: 100%; height: 100%; object-fit: contain; }
+        .timeline-badge.no-logo { background: linear-gradient(135deg, var(--teal), var(--purple)); padding: 0; }
         
-        .timeline-info h3 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .timeline-subtitle {
-            color: var(--purple);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
+        .timeline-info h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin-bottom: 0.2rem; }
+        .timeline-subtitle { color: var(--purple); font-weight: 600; font-size: 1rem; }
         .timeline-count {
-            padding: 0.5rem 1.2rem;
-            background: rgba(106, 76, 147, 0.15);
-            border: 1px solid rgba(106, 76, 147, 0.3);
-            border-radius: 2rem;
-            color: var(--purple);
-            font-weight: 700;
-            font-size: 0.9rem;
+            padding: 0.5rem 1.2rem; background: rgba(106, 76, 147, 0.15);
+            border: 1px solid rgba(106, 76, 147, 0.3); border-radius: 2rem;
+            color: var(--purple); font-weight: 700; font-size: 0.9rem;
         }
         
-        .timeline-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.6s ease;
-        }
-
-        .timeline-content.active {
-            max-height: 15000px;
-        }
-
-        .timeline-body {
-            padding: 0 2rem 2rem 2rem;
-        }
+        .timeline-content { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+        .timeline-content.active { max-height: 15000px; }
+        .timeline-body { padding: 0 2rem 2rem 2rem; }
         
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .category-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.2rem; padding: 1.5rem; transition: all 0.3s ease;
         }
-
         .category-card:hover {
-            border-color: var(--orange);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
-            transform: none;
+            border-color: var(--orange); background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.2); transform: none;
         }
         
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
+        .category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
         .category-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            width: 45px; height: 45px; border-radius: 1rem; display: flex; align-items: center;
+            justify-content: center; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-
-        .category-card h4 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .category-courses {
-            list-style: none;
-        }
-
+        .category-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
+        .category-courses { list-style: none; }
         .category-courses li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            gap: 0.6rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            align-items: flex-start;
+            padding: 0.7rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; gap: 0.6rem; color: var(--text-secondary); font-size: 0.95rem; align-items: flex-start;
         }
-
-        .category-courses li:last-child {
-            border-bottom: none;
-        }
-
+        .category-courses li:last-child { border-bottom: none; }
         .category-courses li.highlight {
-            background: rgba(255, 107, 53, 0.15);
-            padding: 0.7rem;
-            border-radius: 0.5rem;
-            color: var(--orange);
-            font-weight: 700;
-            border-bottom: none;
+            background: rgba(255, 107, 53, 0.15); padding: 0.7rem;
+            border-radius: 0.5rem; color: var(--orange); font-weight: 700; border-bottom: none;
         }
 
         /* --- SEARCH --- */
-        .search-container {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-        }
-
+        .search-container { max-width: 900px; margin: 0 auto 3rem; }
         .search-wrapper {
-            position: relative;
-            background: var(--bg-secondary);
-            border: 2px solid var(--glass-border);
-            border-radius: 2rem;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            transition: all 0.3s;
+            position: relative; background: var(--bg-secondary); border: 2px solid var(--glass-border);
+            border-radius: 2rem; overflow: hidden; display: flex; align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: all 0.3s;
         }
-
-        .search-wrapper:focus-within {
-            border-color: var(--orange);
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
-        }
-
-        .search-icon {
-            margin-left: 1.5rem;
-            color: var(--orange);
-        }
-
+        .search-wrapper:focus-within { border-color: var(--orange); box-shadow: 0 0 30px rgba(255, 107, 53, 0.3); }
+        .search-icon { margin-left: 1.5rem; color: var(--orange); }
         .search-input {
-            width: 100%;
-            padding: 1.2rem;
-            background: transparent;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            font-family: var(--font-body);
-            outline: none;
+            width: 100%; padding: 1.2rem; background: transparent; border: none;
+            color: var(--text-primary); font-size: 1.1rem; font-family: var(--font-body); outline: none;
         }
-
         .search-results {
-            text-align: center;
-            margin-top: 1rem;
-            padding: 0.5rem 1.5rem;
+            text-align: center; margin-top: 1rem; padding: 0.5rem 1.5rem;
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(0, 212, 170, 0.15));
-            border-radius: 2rem;
-            display: inline-block;
-            color: var(--orange);
-            font-weight: 700;
+            border-radius: 2rem; display: inline-block; color: var(--orange); font-weight: 700;
         }
 
         /* --- ENGAGEMENT / AMBITION / FAQ / FOOTER / DOCK --- */
         .engagement-section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            padding: 4rem 2rem;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 2rem;
+            padding: 4rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto;
+            position: relative; overflow: hidden;
         }
-
         .engagement-text {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            line-height: 1.8;
-            color: var(--text-primary);
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem); line-height: 1.8; color: var(--text-primary);
+            max-width: 800px; margin: 0 auto 2rem;
         }
-
         .engagement-signature {
-            font-family: var(--font-display);
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-top: 2rem;
+            font-family: var(--font-display); font-weight: 900; font-size: 1.5rem; margin-top: 2rem;
             background: linear-gradient(90deg, var(--teal), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .ambition-section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-left: 5px solid var(--orange);
-            border-radius: 2rem;
-            padding: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-left: 5px solid var(--orange); border-radius: 2rem; padding: 3rem;
+            max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;
+            position: relative; overflow: hidden;
         }
-
         .ambition-header h3 {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            font-family: var(--font-display); font-size: 2.2rem; font-weight: 800;
+            margin-bottom: 0.5rem; color: var(--text-primary);
         }
-
         .ambition-subtitle {
-            font-size: 1.2rem;
-            color: var(--orange);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 1.2rem; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
         }
-
-        .ambition-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        .ambition-text strong {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
+        .ambition-text { font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); }
+        .ambition-text strong { color: var(--text-primary); font-weight: 700; }
         
         @media (min-width: 900px) {
-            .ambition-section {
-                flex-direction: row;
-                align-items: center;
-                text-align: left;
-            }
-            .ambition-header {
-                flex: 1;
-                border-right: 1px solid var(--glass-border);
-                padding-right: 2rem;
-            }
-            .ambition-body {
-                flex: 2;
-                padding-left: 2rem;
-            }
+            .ambition-section { flex-direction: row; align-items: center; text-align: left; }
+            .ambition-header { flex: 1; border-right: 1px solid var(--glass-border); padding-right: 2rem; }
+            .ambition-body { flex: 2; padding-left: 2rem; }
         }
-
         @media (max-width: 899px) {
-            .ambition-header {
-                border-bottom: 1px solid var(--glass-border);
-                padding-bottom: 1.5rem;
-                text-align: center;
-            }
-            .ambition-body {
-                padding-top: 0.5rem;
-            }
+            .ambition-header { border-bottom: 1px solid var(--glass-border); padding-bottom: 1.5rem; text-align: center; }
+            .ambition-body { padding-top: 0.5rem; }
         }
 
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .faq-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .faq-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-        }
-
-        .faq-item:hover {
-            border-color: var(--teal);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .faq-header {
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        @media (min-width: 768px) { .faq-grid { grid-template-columns: repeat(2, 1fr); } }
+        .faq-item { cursor: pointer; transition: all 0.3s ease; padding: 0; }
+        .faq-item:hover { border-color: var(--teal); background: rgba(255, 255, 255, 0.05); }
+        .faq-header { padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
         .faq-question {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
+            display: flex; align-items: center; gap: 10px; font-family: var(--font-display);
+            font-weight: 700; font-size: 1.1rem; color: var(--text-primary);
         }
-
-        .faq-toggle-icon {
-            transition: transform 0.3s ease;
-            color: var(--text-secondary);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-        }
-
+        .faq-toggle-icon { transition: transform 0.3s ease; color: var(--text-secondary); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1); }
         .faq-body {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
+            padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.6;
+            font-size: 0.95rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem;
         }
-
-        .faq-item.active {
-            border-color: var(--orange);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .faq-item.active .faq-toggle-icon {
-            transform: rotate(45deg);
-            color: var(--orange);
-        }
-
-        .faq-item.active .faq-content {
-            max-height: 300px;
-            transition: max-height 0.4s ease-in-out;
-        }
+        .faq-item.active { border-color: var(--orange); background: rgba(255, 255, 255, 0.08); }
+        .faq-item.active .faq-toggle-icon { transform: rotate(45deg); color: var(--orange); }
+        .faq-item.active .faq-content { max-height: 300px; transition: max-height 0.4s ease-in-out; }
 
         footer {
-            padding: 6rem 1rem;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            margin-top: 6rem;
-            background: linear-gradient(to top, var(--bg-secondary), transparent);
+            padding: 6rem 1rem; text-align: center; border-top: 1px solid var(--glass-border);
+            margin-top: 6rem; background: linear-gradient(to top, var(--bg-secondary), transparent);
         }
-
-        footer h3 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .copyright {
-            color: var(--text-secondary);
-            opacity: 0.6;
-        }
+        footer h3 { font-family: var(--font-display); font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; }
+        .footer-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+        .copyright { color: var(--text-secondary); opacity: 0.6; }
 
         .dock-nav {
             position: fixed;
@@ -1193,164 +631,92 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             transition: all 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
         }
-
-        .dock-nav:hover {
-            transform: translateX(-50%) scale(1.03);
-        }
-
+        .dock-nav:hover { transform: translateX(-50%) scale(1.03); }
         .dock-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-secondary); text-decoration: none; width: 55px; height: 55px;
+            border-radius: 50%; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative;
         }
-
         .dock-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--text-primary);
-            transform: translateY(-15px) scale(1.2);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 10;
+            background: rgba(255, 255, 255, 0.15); color: var(--text-primary);
+            transform: translateY(-15px) scale(1.2); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 10;
         }
-
         .dock-item.active {
-            color: white;
-            background: linear-gradient(135deg, var(--orange), var(--pink));
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
-            transform: translateY(-5px);
+            color: white; background: linear-gradient(135deg, var(--orange), var(--pink));
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5); transform: translateY(-5px);
         }
-
-        .dock-item i {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s;
-        }
-
+        .dock-item i { width: 24px; height: 24px; transition: all 0.3s; }
         .dock-item span {
-            position: absolute;
-            top: -45px;
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            pointer-events: none;
-            white-space: nowrap;
-            backdrop-filter: blur(5px);
+            position: absolute; top: -45px; background: rgba(0,0,0,0.9); color: white; padding: 5px 12px;
+            border-radius: 12px; font-size: 0.8rem; font-weight: 600; opacity: 0; transform: translateY(10px);
+            transition: all 0.3s; pointer-events: none; white-space: nowrap; backdrop-filter: blur(5px);
         }
+        .dock-item:hover span { opacity: 1; transform: translateY(0); }
 
-        .dock-item:hover span {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .controls-panel {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 100;
-            display: flex;
-            gap: 0.8rem;
-        }
-
+        .controls-panel { position: fixed; top: 2rem; right: 2rem; z-index: 100; display: flex; gap: 0.8rem; }
         .control-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.4rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem;
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 2rem;
+            color: var(--text-primary); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+            cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);
         }
-
         .control-btn:hover {
-            background: rgba(255, 107, 53, 0.15);
-            border-color: var(--orange);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+            background: rgba(255, 107, 53, 0.15); border-color: var(--orange);
+            transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
         }
 
         .hidden { display: none; }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 640px) {
             .hero-title { font-size: 2.8rem; }
             .controls-panel { top: 1rem; right: 1rem; gap: 0.5rem; }
             .control-btn span { display: none; }
             .control-btn { padding: 0.8rem; }
-            
-            .dock-nav { 
-                padding: 8px 10px; 
-                bottom: 20px; 
-                width: 95%; 
-                justify-content: space-between;
-            }
+            .dock-nav { padding: 8px 10px; bottom: 20px; width: 95%; justify-content: space-between; }
             .dock-item { width: 42px; height: 42px; }
             .dock-item span { display: none; }
-            
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-                padding: 1.5rem 1rem;
-            }
-            
-            .timeline-header > div:first-child {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .timeline-header > div:last-child {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 0.5rem;
-            }
-            
-            .timeline-badge {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .timeline-info h3 {
-                font-size: 1.2rem;
-            }
+            .timeline-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1rem; }
+            .timeline-header > div:first-child { width: 100%; justify-content: flex-start; }
+            .timeline-header > div:last-child { width: 100%; justify-content: space-between; margin-top: 0.5rem; }
+            .timeline-badge { width: 50px; height: 50px; }
+            .timeline-info h3 { font-size: 1.2rem; }
+            .timeline-body { padding: 0 0.5rem 1.5rem 0.5rem; }
+            .categories-grid { grid-template-columns: 1fr; gap: 1rem; }
+        }
 
-            .timeline-body {
-                padding: 0 0.5rem 1.5rem 0.5rem;
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+        /* --- SOBRE MODE OVERRIDES (CLEAN DESIGN) --- */
+        body.sober-mode .orb, 
+        body.sober-mode .cursor-glow { 
+            display: none !important; 
+        }
+        
+        body.sober-mode .gradient-text {
+            background: none;
+            -webkit-text-fill-color: var(--text-primary);
+            color: var(--text-primary);
+            filter: none;
+        }
+        
+        body.sober-mode .profile-image {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: white;
+            border-color: transparent;
+            animation: none;
+        }
+
+        body.sober-mode .btn-primary {
+            background: #1d1d1f;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        body.sober-mode .category-card:hover {
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-color: rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -1397,9 +763,9 @@
                     </div>
                 </div>
 
-                <!-- JOB TITLE EN H1 (ADAPTÉ PMO) -->
+                <!-- JOB TITLE EN H1 EXACTEMENT COMME DEMANDÉ -->
                 <h1 class="hero-title">
-                    <span class="gradient-text" data-translate="hero_badge">PMO • Project Manager • Gouvernance & Data</span>
+                    <span class="gradient-text" data-translate="hero_badge">PMO / CHEF DE PROJET JUNIOR - GOUVERNANCE & DATA</span>
                 </h1>
 
                 <!-- NOM EN SECOND PLAN -->
@@ -1408,7 +774,7 @@
                 </div>
 
                 <p class="hero-description" data-translate="hero_description">
-                    Master 2 en Gestion de Projet passionné par la structuration, l'analyse et la data. J'aide les entreprises à <span class="highlight">sécuriser l'exécution</span> de leurs projets complexes, <span class="highlight">coordonner les parties prenantes</span> et produire des <span class="highlight">reportings fiables</span> pour la prise de décision.
+                    Master 2 en Gestion de Projet avec 3 ans d'expérience opérationnelle solide. J'allie la <span class="highlight">rigueur de la gestion de portefeuille (GRDF)</span>, la maîtrise analytique de la <span class="highlight">Data</span> et l'audace d'un <span class="highlight">profil entrepreneurial</span> pour sécuriser et piloter l'exécution de vos projets les plus stratégiques.
                 </p>
 
                 <div class="cta-container">
@@ -1433,93 +799,93 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 class="section-title gradient-text" data-translate="section_pro_title">PARCOURS OPÉRATIONNEL</h2>
-                <p class="section-subtitle" data-translate="section_pro_subtitle">Expériences en gestion, suivi et reporting</p>
+                <p class="section-subtitle" data-translate="section_pro_subtitle">Ce que j'ai fait et ce que cela apporte à vos projets</p>
             </div>
 
             <div class="experience-grid">
-                <!-- GRDF : PMO / CHARGÉ DE PORTEFEUILLE -->
+                <!-- GRDF -->
                 <div class="experience-card card-glass reveal">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770845415458-fa73a2c3-87e8-43ff-8628-6fc1cfc63e5d.png" alt="GRDF Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--orange);" data-translate="exp_grdf_title">PMO Junior & Chargé de Portefeuille</h3>
+                            <h3 style="color: var(--orange);" data-translate="exp_grdf_title">Chargé de Portefeuille & Projets (Alternance)</h3>
                             <div class="exp-period" data-translate="exp_grdf_period">2023 - 2026 • 3 ans</div>
                             <div class="exp-company" style="color: var(--orange);">GRDF - Lille, France</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_grdf_desc">
-                        Support au pilotage d'un portefeuille de projets de concession. Mise à jour des indicateurs (coûts, délais), suivi des risques et production de tableaux de bord mensuels. Préparation des comités et coordination avec les élus locaux.
+                        Pilotage de la relation avec un portefeuille de collectivités locales (communes, EPCI). Suivi des contrats de concession, analyse des investissements et performances, et production de reportings exécutifs pour les instances décisionnelles et les élus.
                     </p>
                     <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_kpi">Reporting & KPI</div>
-                        <div class="exp-tag" data-translate="tag_contracts">Suivi de projet</div>
-                        <div class="exp-tag" data-translate="tag_relations">Coordination Stakeholders</div>
+                        <div class="exp-tag" data-translate="tag_kpi">Reporting & Data</div>
+                        <div class="exp-tag" data-translate="tag_contracts">Suivi de concession</div>
+                        <div class="exp-tag" data-translate="tag_relations">Gestion Stakeholders</div>
                         <div class="exp-tag" data-translate="tag_reporting">Gouvernance</div>
                     </div>
                 </div>
 
-                <!-- DESRÊVES : PROJECT MANAGER "FROM SCRATCH" -->
+                <!-- DESRÊVES -->
                 <div class="experience-card card-glass reveal">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770846729486-db125a45-ffa2-476b-999b-dd9ab99bef16.png" alt="Desrèves Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--teal);" data-translate="exp_desreves_title">Chef de Projet Entrepreneurial</h3>
+                            <h3 style="color: var(--teal);" data-translate="exp_desreves_title">Créateur & Chef de Projet Entrepreneurial</h3>
                             <div class="exp-period" data-translate="exp_desreves_period">2024 - Aujourd'hui</div>
                             <div class="exp-company" style="color: var(--teal);" data-translate="exp_desreves_comp">Desrèves - Marque de vêtements</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_desreves_desc">
-                        Pilotage de A à Z d'un projet de création d'entreprise. Planification (Roadmap, Jalons), gestion du budget, optimisation des process de sourcing et coordination des prestataires. Forte culture du résultat et du ROI.
+                        Gestion complète du cycle de vie d'un projet de création d'entreprise. De la planification stratégique (roadmap, budget) à l'exécution opérationnelle (sourcing, dev web Liquid/CSS, lancement marketing). Forte orientation ROI.
                     </p>
                     <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_entrepreneurship">Gestion de Budget</div>
-                        <div class="exp-tag" data-translate="tag_product_design">Planification (Roadmap)</div>
-                        <div class="exp-tag" data-translate="tag_web_dev">Amélioration continue</div>
+                        <div class="exp-tag" data-translate="tag_entrepreneurship">Planification (Roadmap)</div>
+                        <div class="exp-tag" data-translate="tag_product_design">Gestion de Budget</div>
+                        <div class="exp-tag" data-translate="tag_web_dev">Exécution opérationnelle</div>
                         <div class="exp-tag" data-translate="tag_suppliers">Coordination Prestataires</div>
                     </div>
                 </div>
 
-                <!-- BDE : GOUVERNANCE ASSOCIATIVE -->
+                <!-- BDE -->
                 <div class="experience-card card-glass reveal">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770848861445-5b22e6f8-0fae-469e-8cc1-2bfe07855dca.png" alt="BDE IAE Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--purple);" data-translate="exp_bde_title">Directeur de Projet Associatif</h3>
+                            <h3 style="color: var(--purple);" data-translate="exp_bde_title">Directeur de Projet Associatif (Président)</h3>
                             <div class="exp-period" data-translate="exp_bde_period">2022 - 2025 • 3 ans</div>
                             <div class="exp-company" style="color: var(--purple);">BDE IAE Valenciennes</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_bde_desc">
-                        Structuration des activités du BDE. Allocation des ressources, suivi budgétaire strict, gestion des risques événementiels (RAID log) et reporting de l'avancement auprès de l'administration universitaire.
+                        Structuration et pilotage de l'association. Management transversal d'une équipe bénévole, contrôle budgétaire strict et gestion des risques (RAID) sur des événements à fort trafic étudiant.
                     </p>
                     <div class="exp-tags">
                         <div class="exp-tag" data-translate="tag_leadership">Structuration</div>
                         <div class="exp-tag" data-translate="tag_budget">Contrôle budgétaire</div>
-                        <div class="exp-tag" data-translate="tag_events">Gestion des risques (RAID)</div>
+                        <div class="exp-tag" data-translate="tag_events">Gestion des risques</div>
                         <div class="exp-tag" data-translate="tag_team_mgmt">Management transversal</div>
                     </div>
                 </div>
 
-                <!-- ESPORT : LOGISTIQUE ET EVENT -->
+                <!-- ESPORT -->
                 <div class="experience-card card-glass reveal">
                     <div class="exp-header">
                         <div class="exp-icon no-img" style="background: linear-gradient(135deg, #ff006e, #d00060);">
                             <i data-lucide="gamepad-2" width="32" style="color: white;"></i>
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--pink);" data-translate="exp_esport_title">Coordinateur de Projet E-sport</h3>
+                            <h3 style="color: var(--pink);" data-translate="exp_esport_title">Coordinateur de Projet (E-sport)</h3>
                             <div class="exp-period" data-translate="exp_esport_period">2018 - 2021 • Dès 15 ans</div>
                             <div class="exp-company" style="color: var(--pink);" data-translate="exp_esport_comp">Structure Associative</div>
                         </div>
                     </div>
                     <p class="exp-description" data-translate="exp_esport_desc">
-                        Création d'une structure compétitive. Coordination logistique des déplacements en LAN, gestion des plannings d'entraînement et communication entre les joueurs et les organisateurs d'événements.
+                        Coordination logistique et management d'équipe dans un environnement compétitif. Planification des déplacements en LAN, gestion des plannings et développement de partenariats stratégiques.
                     </p>
                     <div class="exp-tags">
                         <div class="exp-tag" data-translate="tag_early_entrepreneurship">Coordination d'équipe</div>
@@ -1528,6 +894,7 @@
                     </div>
                 </div>
 
+                <!-- INTERNATIONAL -->
                 <div class="experience-card card-glass reveal">
                     <div class="exp-header">
                         <div class="exp-icon no-img" style="background: linear-gradient(135deg, #ffbe0b, #ff9e00);">
@@ -1561,8 +928,8 @@
     <section id="vision">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title gradient-text" data-translate="section_vision_title">MA VISION DU PMO</h2>
-                <p class="section-subtitle" data-translate="section_vision_subtitle">Mes convictions pour faire réussir un projet</p>
+                <h2 class="section-title gradient-text" data-translate="section_vision_title">MA VISION DE LA GESTION DE PROJET</h2>
+                <p class="section-subtitle" data-translate="section_vision_subtitle">Mes convictions pour faire réussir vos initiatives</p>
             </div>
 
             <div class="vision-grid">
@@ -1572,7 +939,7 @@
                     </div>
                     <h3 style="color: var(--teal);" data-translate="vision_1_title">Structurer pour sécuriser</h3>
                     <p data-translate="vision_1_desc">
-                        J'aime apporter de la clarté là où il y a de la complexité. Un projet bien structuré (planning, rôles, jalons) est un projet qui a 80% de chances de réussir dans les temps et le budget alloué.
+                        Un projet réussi commence par un cadre clair. Mon rôle est d'apporter cette clarté (roadmap, jalons, rôles) pour sécuriser l'exécution, anticiper les risques et garantir la livraison dans les temps et le budget.
                     </p>
                 </div>
 
@@ -1580,9 +947,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #6a4c93, #8b5cf6);">
                         <i data-lucide="bar-chart-3" width="32"></i>
                     </div>
-                    <h3 style="color: var(--purple);" data-translate="vision_2_title">La Data au service de la décision</h3>
+                    <h3 style="color: var(--purple);" data-translate="vision_2_title">La Data au cœur de la décision</h3>
                     <p data-translate="vision_2_desc">
-                        Un bon PMO éclaire les décideurs. Je conçois des tableaux de bord et des reportings précis (Excel, Power BI) pour que les comités de pilotage (COPIL) puissent agir sur des faits, pas des intuitions.
+                        Je ne gère pas un projet "au feeling". J'utilise les outils d'analyse (Excel, Power BI) pour transformer la donnée brute en insights stratégiques, permettant ainsi aux parties prenantes de prendre des décisions éclairées.
                     </p>
                 </div>
 
@@ -1590,9 +957,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #ff006e, #d00060);">
                         <i data-lucide="git-merge" width="32"></i>
                     </div>
-                    <h3 style="color: var(--pink);" data-translate="vision_3_title">Coordination & Fluidité</h3>
+                    <h3 style="color: var(--pink);" data-translate="vision_3_title">Fluidité & Coordination</h3>
                     <p data-translate="vision_3_desc">
-                        Le PMO est le chef d'orchestre. Je m'assure que l'information circule entre le métier, la technique et le management. Je relance, je synthétise les réunions et j'assure le suivi strict des actions.
+                        Le Chef de Projet est le pont entre la technique, le business et le client. J'assure cette traduction permanente, fluidifie la communication et fédère les équipes autour d'un objectif commun sans nécessiter de lien hiérarchique direct.
                     </p>
                 </div>
 
@@ -1600,9 +967,9 @@
                     <div class="vision-icon" style="background: linear-gradient(135deg, #ff6b35, #f77f00);">
                         <i data-lucide="refresh-cw" width="32"></i>
                     </div>
-                    <h3 style="color: var(--orange);" data-translate="vision_4_title">Amélioration Continue</h3>
+                    <h3 style="color: var(--orange);" data-translate="vision_4_title">Amélioration Continue & Outils</h3>
                     <p data-translate="vision_4_desc">
-                        Un process n'est jamais figé. J'analyse constamment nos méthodes de travail pour proposer de nouveaux templates, automatiser des tâches sans valeur ajoutée et optimiser les outils de suivi (Jira, MS Project).
+                        Je maîtrise les outils modernes (Notion, Linear) et j'intègre l'Intelligence Artificielle à mes workflows. Mon but : automatiser ce qui n'a pas de valeur ajoutée pour concentrer l'équipe sur la résolution de problèmes complexes.
                     </p>
                 </div>
             </div>
@@ -1613,7 +980,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 class="section-title gradient-text" data-translate="section_atouts_title">MES ATOUTS & DÉFIS</h2>
-                <p class="section-subtitle" data-translate="section_atouts_subtitle">Transparence totale sur mon profil PMO Junior</p>
+                <p class="section-subtitle" data-translate="section_atouts_subtitle">Transparence totale sur mon profil de Chef de Projet</p>
             </div>
 
             <div class="traits-container">
@@ -1625,27 +992,27 @@
                     <div class="trait-list">
                         <div class="trait-item" onclick="openDetail('force_1')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_1"><strong>Rigueur & Fiabilité</strong> — Je garantis des données exactes pour les comités.</span>
+                            <span data-translate="force_1"><strong>Vision Transversale</strong> — Capacité à lier enjeux globaux et réalités opérationnelles.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_2')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_2"><strong>Esprit Analytique</strong> — À l'aise avec la structuration de données (Excel/TCD).</span>
+                            <span data-translate="force_2"><strong>Pragmatisme & ROI</strong> — Pilotage orienté création de valeur et efficacité.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_3')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_3"><strong>Capacité de Synthèse</strong> — Rédiger des CR concis et des supports exécutifs (COMOP).</span>
+                            <span data-translate="force_3"><strong>Leadership d'Influence</strong> — Engager les équipes sans lien de subordination.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_4')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_4"><strong>Coordination Transversale</strong> — Faire le lien entre IT, Métiers et Direction.</span>
+                            <span data-translate="force_4"><strong>Autonomie (0 to 1)</strong> — Habitué à structurer des projets à partir d'une page blanche.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_5')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_5"><strong>Proactivité</strong> — Toujours proposer une optimisation d'outil ou de process.</span>
+                            <span data-translate="force_5"><strong>Communication Claire</strong> — Traduire les enjeux complexes en points synthétiques.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('force_6')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
-                            <span data-translate="force_6"><strong>Aisance Relationnelle</strong> — Relancer les parties prenantes avec diplomatie.</span>
+                            <span data-translate="force_6"><strong>Esprit Data-Driven</strong> — Fonder les décisions sur l'analyse de données factuelles.</span>
                         </div>
                     </div>
                 </div>
@@ -1653,32 +1020,32 @@
                 <div class="trait-card card-glass weaknesses reveal">
                     <div class="trait-header">
                         <i data-lucide="alert-circle" width="30" style="color: var(--yellow);"></i>
-                        <span class="trait-badge amber" data-translate="lbl_weaknesses">DÉFIS DE TRANSITION (REALITY CHECK)</span>
+                        <span class="trait-badge amber" data-translate="lbl_weaknesses">POINTS D'ATTENTION (REALITY CHECK)</span>
                     </div>
                     <div class="trait-list">
                         <div class="trait-item" onclick="openDetail('weak_1')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_1"><strong>Outils spécifiques Entreprise</strong> — Je devrai m'adapter rapidement à votre instance Jira/PPM.</span>
+                            <span data-translate="weak_1"><strong>Besoin de sens</strong> — Je m'investis pleinement si je comprends le "Pourquoi" d'un projet.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_2')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_2"><strong>Environnements hyper-techniques</strong> — Besoin d'un temps d'adaptation pour le jargon pur IT.</span>
+                            <span data-translate="weak_2"><strong>Biais d'action</strong> — L'entrepreneur en moi veut avancer vite ; j'apprends à temporiser face aux process internes.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_3')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_3"><strong>Risque de sur-processisation</strong> — Je dois veiller à ne pas alourdir l'agilité avec trop de cadres.</span>
+                            <span data-translate="weak_3"><strong>Communication Directe</strong> — Je privilégie l'efficacité, nécessitant parfois d'adapter ma forme en milieu politique.</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_4')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_4"><strong>Posture d'accompagnement</strong> — En tant qu'entrepreneur, j'aime "faire". Le PMO doit souvent "faire faire".</span>
+                            <span data-translate="weak_4"><strong>L'art de la délégation</strong> — Ayant souvent porté mes projets seul, j'aiguise ma posture de "faire faire".</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_5')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_5"><strong>Appréhender la gouvernance interne</strong> — Chaque grand groupe a sa propre politique à maîtriser.</span>
+                            <span data-translate="weak_5"><strong>Onboarding Outils</strong> — Je maîtrise Notion/Linear/IA, mais devrai m'adapter à vos instances spécifiques (ex: Jira).</span>
                         </div>
                         <div class="trait-item" onclick="openDetail('weak_6')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
-                            <span data-translate="weak_6"><strong>Gestion du flou</strong> — Le PMO aime quand tout est clair ; il faut accepter l'incertitude du démarrage projet.</span>
+                            <span data-translate="weak_6"><strong>Gestion du flou</strong> — Je ressens le besoin de structurer rapidement les phases de forte incertitude.</span>
                         </div>
                     </div>
                 </div>
@@ -1689,53 +1056,66 @@
     <section id="competences">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title gradient-text" data-translate="section_skills_title">COMPÉTENCES PMO</h2>
-                <p class="section-subtitle" data-translate="section_skills_subtitle">Mes outils et méthodologies</p>
+                <h2 class="section-title gradient-text" data-translate="section_skills_title">COMPÉTENCES</h2>
+                <p class="section-subtitle" data-translate="section_skills_subtitle">Mes outils et expertises projet</p>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-category card-glass reveal">
                     <h3 data-translate="skill_cat_mgmt">
                         <i data-lucide="briefcase" width="24" style="color: var(--orange);"></i>
-                        Pilotage & Gouvernance
+                        Pilotage & Stratégie
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag" data-translate="skill_agile">Méthodologie (Cycle V, Agile)</div>
-                        <div class="skill-tag">Planification (Gantt, Jalons)</div>
-                        <div class="skill-tag">Préparation COPIL / COMOP</div>
-                        <div class="skill-tag" data-translate="skill_kpi">Suivi des KPIs & Budget</div>
-                        <div class="skill-tag" data-translate="skill_risk">Gestion des risques (RAID log)</div>
-                        <div class="skill-tag" data-translate="skill_team">Coordination des équipes</div>
-                        <div class="skill-tag" data-translate="skill_scrum">Amélioration continue des process</div>
+                        <div class="skill-tag" data-translate="skill_agile">Méthodologies (Agile, Cycle V)</div>
+                        <div class="skill-tag">Planification (Roadmap, Jalons)</div>
+                        <div class="skill-tag">Gestion de Portefeuille</div>
+                        <div class="skill-tag" data-translate="skill_kpi">Pilotage Budgétaire & KPI</div>
+                        <div class="skill-tag" data-translate="skill_risk">Gestion des risques (RAID)</div>
+                        <div class="skill-tag" data-translate="skill_team">Coordination Transversale</div>
+                        <div class="skill-tag" data-translate="skill_scrum">Gouvernance de projet</div>
                     </div>
                 </div>
 
                 <div class="skill-category card-glass reveal">
                     <h3 data-translate="skill_cat_data">
                         <i data-lucide="bar-chart-3" width="24" style="color: var(--purple);"></i>
-                        Reporting & Data
+                        Data & Analyse
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag" data-translate="skill_excel">Excel avancé (TCD, Formules complexes)</div>
-                        <div class="skill-tag">Power BI (Base/Création)</div>
-                        <div class="skill-tag" data-translate="skill_dash">Tableaux de bord (Dashboards)</div>
-                        <div class="skill-tag" data-translate="skill_data">Consolidation de données</div>
+                        <div class="skill-tag" data-translate="skill_excel">Excel Avancé (TCD, Formules)</div>
+                        <div class="skill-tag">Power BI</div>
+                        <div class="skill-tag" data-translate="skill_dash">Reporting & Tableaux de bord</div>
+                        <div class="skill-tag" data-translate="skill_data">Analyse et structuration de données</div>
                         <div class="skill-tag" data-translate="skill_control">Contrôle de gestion projet</div>
                     </div>
                 </div>
 
                 <div class="skill-category card-glass reveal">
-                    <h3>
-                        <i data-lucide="wrench" width="24" style="color: var(--teal);"></i>
-                        Outils & Logiciels
+                    <h3 data-translate="skill_cat_tools">
+                        <i data-lucide="sparkles" width="24" style="color: var(--teal);"></i>
+                        Outils & IA
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag" data-translate="skill_digital">Jira / Confluence</div>
-                        <div class="skill-tag">MS Project (Notions)</div>
-                        <div class="skill-tag">PowerPoint (Supports exécutifs)</div>
-                        <div class="skill-tag" data-translate="skill_workflows">Notion / Outils collaboratifs</div>
-                        <div class="skill-tag" data-translate="skill_prompt">Prompting IA (Gain de temps)</div>
-                        <div class="skill-tag">VBA (Automatisation de reportings)</div>
+                        <div class="skill-tag" data-translate="skill_workflows">Notion / Linear / Outils collaboratifs</div>
+                        <div class="skill-tag" data-translate="skill_prompt">Prompting IA avancé</div>
+                        <div class="skill-tag" data-translate="skill_digital">Automatisation de workflows</div>
+                        <div class="skill-tag">Outils de présentation (PPT)</div>
+                        <div class="skill-tag">CRM / CMS</div>
+                    </div>
+                </div>
+
+                <div class="skill-category card-glass reveal">
+                    <h3 data-translate="skill_cat_tech">
+                        <i data-lucide="code" width="24" style="color: var(--pink);"></i>
+                        Bases Techniques
+                    </h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag" data-translate="skill_css">HTML/CSS (Compréhension)</div>
+                        <div class="skill-tag" data-translate="skill_liquid">Liquid (Architecture E-commerce)</div>
+                        <div class="skill-tag" data-translate="skill_r">Notions d'API</div>
+                        <div class="skill-tag">VBA (Bases)</div>
+                        <div class="skill-tag">Suite Adobe</div>
                     </div>
                 </div>
 
@@ -1746,11 +1126,11 @@
                     </h3>
                     <div class="skill-tags">
                         <div class="skill-tag" data-translate="skill_disc">Rigueur & Fiabilité</div>
-                        <div class="skill-tag" data-translate="skill_com">Aisance écrite et orale (CR)</div>
-                        <div class="skill-tag">Capacité de synthèse</div>
-                        <div class="skill-tag" data-translate="skill_prob">Esprit analytique & structuré</div>
-                        <div class="skill-tag" data-translate="skill_listen">Proactivité</div>
-                        <div class="skill-tag" data-translate="skill_result">Sens des responsabilités</div>
+                        <div class="skill-tag" data-translate="skill_com">Capacité de synthèse (CR)</div>
+                        <div class="skill-tag" data-translate="skill_prob">Esprit analytique orienté solution</div>
+                        <div class="skill-tag" data-translate="skill_listen">Écoute active & Diplomatie</div>
+                        <div class="skill-tag" data-translate="skill_result">Proactivité</div>
+                        <div class="skill-tag">Résilience</div>
                     </div>
                 </div>
 
@@ -1761,8 +1141,10 @@
                     </h3>
                     <div class="skill-tags">
                         <div class="skill-tag" data-translate="lang_fr">🇫🇷 Français (Natif)</div>
-                        <div class="skill-tag" data-translate="lang_en">🇬🇧 Anglais (B2)</div>
-                        <div class="skill-tag" data-translate="lang_es">🇪🇸 Espagnol (A2)</div>
+                        <div class="skill-tag" data-translate="lang_en">🇬🇧 Anglais (Pro - TOEIC C1 visé)</div>
+                        <div class="skill-tag" data-translate="lang_es">🇪🇸 Espagnol (Notions)</div>
+                        <div class="skill-tag" data-translate="lang_fi">🇫🇮 Finlande (mobilité)</div>
+                        <div class="skill-tag" data-translate="lang_ro">🇷🇴 Roumanie (mobilité)</div>
                     </div>
                 </div>
             </div>
@@ -1783,7 +1165,7 @@
                         type="text" 
                         class="search-input" 
                         id="searchInput"
-                        placeholder="Rechercher un cours (ex: MS Project, Risques, Finance...)"
+                        placeholder="Rechercher un cours (ex: Finance, Risques, Data...)"
                     >
                 </div>
                 <div id="searchResults" class="search-results hidden"></div>
@@ -1793,19 +1175,19 @@
         </div>
     </section>
 
-    <!-- SECTION AMBITION PMO -->
+    <!-- SECTION AMBITION (HYBRIDE PROJET) -->
     <section id="ambition" class="reveal">
         <div class="container">
             <div class="ambition-section">
                 <div class="ambition-header">
-                    <h3 data-translate="ambition_title">MON OBJECTIF PMO</h3>
-                    <div class="ambition-subtitle" data-translate="ambition_subtitle">Sécuriser, structurer et fluidifier</div>
+                    <h3 data-translate="ambition_title">MON ENGAGEMENT / MON PROFIL</h3>
+                    <div class="ambition-subtitle" data-translate="ambition_subtitle">L'avantage d'un profil hybride</div>
                 </div>
                 <div class="ambition-body">
                     <p class="ambition-text" data-translate="ambition_text">
-                        En tant que Junior PMO, mon objectif n'est pas de diriger seul des projets complexes dès le premier jour, mais d'en <strong>sécuriser la gouvernance et l'exécution</strong>.
-                        Je m'appuie sur la <strong>rigueur d'analyse</strong> que j'ai développée chez GRDF et l'<strong>approche orientée solution</strong> de mes projets entrepreneuriaux. 
-                        Je suis structuré, à l'aise avec la Data (Excel/KPI) et capable de communiquer efficacement avec des parties prenantes exigeantes. Mon ambition : devenir un bras droit indispensable pour vos chefs de projet et directions.
+                        Pourquoi choisir un profil de chef de projet standard quand vous pouvez intégrer un hybride ? 
+                        Mon parcours de 3 ans allie la <strong>rigueur d'exécution d'un grand groupe</strong> (GRDF) et l'<strong>agilité d'un créateur d'entreprise</strong> (Desrèves). 
+                        Je cherche à piloter des projets ambitieux (rôle de Chef de Projet, Responsable de Projet ou PMO) où je pourrai mettre à profit ma structuration de la donnée, ma gestion des parties prenantes et mon orientation "création de valeur", tout en m'adaptant à vos spécificités métiers.
                     </p>
                 </div>
             </div>
@@ -1821,6 +1203,7 @@
             </div>
 
             <div class="faq-grid">
+                <!-- Q1 : Disponibilité -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1831,11 +1214,12 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a1">
-                            Je serai diplômé de mon Master 2 et fin de contrat d'alternance fin juin. Je suis donc <strong>disponible dès début Juillet 2026</strong>.
+                            Je serai diplômé de mon Master 2 et en fin de contrat d'alternance fin juin. Je suis donc <strong>disponible dès début Juillet 2026</strong>.
                         </div>
                     </div>
                 </div>
 
+                <!-- Q2 : Mobilité -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1851,6 +1235,7 @@
                     </div>
                 </div>
 
+                <!-- Q3 : Contrat -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1861,11 +1246,12 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a3">
-                            Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que PMO Junior, Project Management Officer ou Chef de Projet Junior.
+                            Je recherche un <strong>CDI</strong> en gestion de projet (Chef de Projet, Responsable de Projet, PMO) pour m'investir sur le long terme au sein de vos équipes.
                         </div>
                     </div>
                 </div>
 
+                <!-- Q4 : Télétravail -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1876,11 +1262,12 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a4">
-                            Les deux me conviennent. Je dispose d'un <strong>setup complet et ergonomique</strong> (Bureau assis-debout, micro perche, double écran) pour une production de reporting optimale à distance.
+                            Les deux me conviennent parfaitement. Je dispose d'un <strong>setup professionnel complet</strong> (bureau assis-debout, micro perche, double écran) garantissant une productivité et une communication optimales à distance.
                         </div>
                     </div>
                 </div>
 
+                 <!-- Q5 : Salaire -->
                  <div class="faq-item card-glass reveal" style="grid-column: 1 / -1;">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1891,7 +1278,7 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-body" data-translate="faq_a5">
-                            Ouvert à la discussion selon le package global et les responsabilités, aligné sur le marché des profils Master 2 avec 3 ans d'expérience opérationnelle en gestion de projet/portefeuille.
+                            Je suis ouvert à la discussion en fonction du niveau de responsabilités et du package global. Mes attentes sont alignées sur le marché pour un profil Master 2 justifiant de 3 années d'expérience opérationnelle solide.
                         </div>
                     </div>
                 </div>
@@ -1906,8 +1293,7 @@
                 <i data-lucide="message-circle-heart" width="48" style="color: var(--teal); margin-bottom: 1.5rem;"></i>
                 <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem;" data-translate="final_title">Le mot de la fin</h2>
                 <p class="engagement-text" data-translate="final_text">
-                    La réussite d'un projet repose autant sur la méthode que sur la fiabilité des informations transmises. 
-                    Si vous cherchez un profil structuré, orienté analyse de données (Excel/Dashboards) et capable de fluidifier la coordination entre vos équipes, discutons-en.
+                    La réussite d'un projet ne repose pas uniquement sur la création d'un rétroplanning, mais sur la capacité à fédérer des acteurs divers, à analyser la data de façon pertinente et à ne jamais perdre de vue la création de valeur finale. Si mon approche résonne avec les besoins de votre équipe, discutons-en de vive voix.
                 </p>
                 <div class="engagement-signature">Florian Bouchart</div>
             </div>
@@ -1929,7 +1315,7 @@
                 </a>
             </div>
 
-            <p class="copyright" data-translate="footer_copyright">© 2026 Florian Bouchart • PMO Portfolio</p>
+            <p class="copyright" data-translate="footer_copyright">© 2026 Florian Bouchart • Portfolio Gestion de Projet</p>
         </div>
     </footer>
 
@@ -1952,7 +1338,7 @@
         </a>
         <a href="#ambition" class="dock-item">
             <i data-lucide="star"></i>
-            <span data-translate="nav_ambition">Ambition</span>
+            <span data-translate="nav_ambition">Profil</span>
         </a>
         <a href="#contact" class="dock-item">
             <i data-lucide="mail"></i>
@@ -1965,54 +1351,54 @@
         let currentLang = 'fr';
         let soberMode = false;
 
-        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES (ADAPTATION PMO)
+        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES
         const translations = {
             fr: {
                 sober_mode: "Clair",
                 availability_badge: "🟢 DISPONIBLE JUILLET 2026",
-                hero_badge: "PMO • Chef de Projet • Gouvernance & Data",
-                hero_description: "Master 2 en Gestion de Projet passionné par la structuration, l'analyse et la data. J'aide les entreprises à <span class=\"highlight\">sécuriser l'exécution</span> de leurs projets complexes, <span class=\"highlight\">coordonner les parties prenantes</span> et produire des <span class=\"highlight\">reportings fiables</span> pour la prise de décision.",
+                hero_badge: "PMO / CHEF DE PROJET JUNIOR - GOUVERNANCE & DATA",
+                hero_description: "Master 2 en Gestion de Projet avec 3 ans d'expérience opérationnelle solide. J'allie la <span class=\"highlight\">rigueur de la gestion de portefeuille (GRDF)</span>, la maîtrise analytique de la <span class=\"highlight\">Data</span> et l'audace d'un <span class=\"highlight\">profil entrepreneurial</span> pour sécuriser et piloter l'exécution de vos projets les plus stratégiques.",
                 btn_cv: "Voir mon CV",
                 cv_link: "https://image2url.com/r2/default/documents/1771518211971-de4865a0-955a-455e-8d50-28aede8ab6a1.pdf",
                 nav_home: "Accueil",
                 nav_career: "Parcours",
                 nav_skills: "Atouts",
                 nav_edu: "Formation",
-                nav_ambition: "Ambition",
+                nav_ambition: "Profil",
                 nav_contact: "Contact",
                 section_pro_title: "PARCOURS OPÉRATIONNEL",
-                section_pro_subtitle: "Expériences en gestion, suivi et reporting",
+                section_pro_subtitle: "Ce que j'ai fait et ce que cela apporte à vos projets",
                 
-                exp_grdf_title: "PMO Junior & Chargé de Portefeuille",
+                exp_grdf_title: "Chargé de Portefeuille & Projets (Alternance)",
                 exp_grdf_period: "2023 - 2026 • 3 ans",
-                exp_grdf_desc: "Support au pilotage d'un portefeuille de projets de concession. Mise à jour des indicateurs (coûts, délais), suivi des risques et production de tableaux de bord mensuels. Préparation des comités et coordination avec les élus locaux.",
-                tag_kpi: "Reporting & KPI",
-                tag_contracts: "Suivi de projet",
-                tag_relations: "Coordination Stakeholders",
+                exp_grdf_desc: "Pilotage de la relation avec un portefeuille de collectivités locales (communes, EPCI). Suivi des contrats de concession, analyse des investissements et performances, et production de reportings exécutifs pour les instances décisionnelles et les élus.",
+                tag_kpi: "Reporting & Data",
+                tag_contracts: "Suivi de concession",
+                tag_relations: "Gestion Stakeholders",
                 tag_reporting: "Gouvernance",
                 
-                exp_desreves_title: "Chef de Projet Entrepreneurial",
+                exp_desreves_title: "Créateur & Chef de Projet Entrepreneurial",
                 exp_desreves_period: "2024 - Aujourd'hui",
                 exp_desreves_comp: "Desrèves - Marque de vêtements",
-                exp_desreves_desc: "Pilotage de A à Z d'un projet de création d'entreprise. Planification (Roadmap, Jalons), gestion du budget, optimisation des process de sourcing et coordination des prestataires. Forte culture du résultat et du ROI.",
-                tag_entrepreneurship: "Gestion de Budget",
-                tag_product_design: "Planification (Roadmap)",
-                tag_web_dev: "Amélioration continue",
+                exp_desreves_desc: "Gestion complète du cycle de vie d'un projet de création d'entreprise. De la planification stratégique (roadmap, budget) à l'exécution opérationnelle (sourcing, dev web Liquid/CSS, lancement marketing). Forte orientation ROI.",
+                tag_entrepreneurship: "Planification (Roadmap)",
+                tag_product_design: "Gestion de Budget",
+                tag_web_dev: "Exécution opérationnelle",
                 tag_suppliers: "Coordination Prestataires",
-                tag_marketing: "Marketing", // Pas de changement spécifique nécessaire ici
+                tag_marketing: "Marketing",
                 
-                exp_bde_title: "Directeur de Projet Associatif",
+                exp_bde_title: "Directeur de Projet Associatif (Président)",
                 exp_bde_period: "2022 - 2025 • 3 ans",
-                exp_bde_desc: "Structuration des activités du BDE. Allocation des ressources, suivi budgétaire strict, gestion des risques événementiels (RAID log) et reporting de l'avancement auprès de l'administration universitaire.",
+                exp_bde_desc: "Structuration et pilotage de l'association. Management transversal d'une équipe bénévole, contrôle budgétaire strict et gestion des risques (RAID) sur des événements à fort trafic étudiant.",
                 tag_leadership: "Structuration",
                 tag_budget: "Contrôle budgétaire",
-                tag_events: "Gestion des risques (RAID)",
+                tag_events: "Gestion des risques",
                 tag_team_mgmt: "Management transversal",
                 
-                exp_esport_title: "Coordinateur de Projet E-sport",
+                exp_esport_title: "Coordinateur de Projet (E-sport)",
                 exp_esport_period: "2018 - 2021 • Dès 15 ans",
                 exp_esport_comp: "Structure Associative",
-                exp_esport_desc: "Création d'une structure compétitive. Coordination logistique des déplacements en LAN, gestion des plannings d'entraînement et communication entre les joueurs et les organisateurs d'événements.",
+                exp_esport_desc: "Coordination logistique et management d'équipe dans un environnement compétitif. Planification des déplacements en LAN, gestion des plannings et développement de partenariats stratégiques.",
                 tag_early_entrepreneurship: "Coordination d'équipe",
                 tag_management: "Planification",
                 tag_event_org: "Logistique événementielle",
@@ -2024,139 +1410,142 @@
                 tag_innovation: "Méthodologies agiles",
                 tag_design_thinking: "Collaboration inter-équipes",
                 
-                section_vision_title: "MA VISION DU PMO",
-                section_vision_subtitle: "Mes convictions pour faire réussir un projet",
+                section_vision_title: "MA VISION DE LA GESTION DE PROJET",
+                section_vision_subtitle: "Mes convictions pour faire réussir vos initiatives",
                 vision_1_title: "Structurer pour sécuriser",
-                vision_1_desc: "J'aime apporter de la clarté là où il y a de la complexité. Un projet bien structuré (planning, rôles, jalons) est un projet qui a 80% de chances de réussir dans les temps et le budget alloué.",
-                vision_2_title: "La Data au service de la décision",
-                vision_2_desc: "Un bon PMO éclaire les décideurs. Je conçois des tableaux de bord et des reportings précis (Excel, Power BI) pour que les comités de pilotage (COPIL) puissent agir sur des faits, pas des intuitions.",
-                vision_3_title: "Coordination & Fluidité",
-                vision_3_desc: "Le PMO est le chef d'orchestre. Je m'assure que l'information circule entre le métier, la technique et le management. Je relance, je synthétise les réunions et j'assure le suivi strict des actions.",
-                vision_4_title: "Amélioration Continue",
-                vision_4_desc: "Un process n'est jamais figé. J'analyse constamment nos méthodes de travail pour proposer de nouveaux templates, automatiser des tâches sans valeur ajoutée et optimiser les outils de suivi (Jira, MS Project).",
+                vision_1_desc: "Un projet réussi commence par un cadre clair. Mon rôle est d'apporter cette clarté (roadmap, jalons, rôles) pour sécuriser l'exécution, anticiper les risques et garantir la livraison dans les temps et le budget.",
+                vision_2_title: "La Data au cœur de la décision",
+                vision_2_desc: "Je ne gère pas un projet \"au feeling\". J'utilise les outils d'analyse (Excel, Power BI) pour transformer la donnée brute en insights stratégiques, permettant ainsi aux parties prenantes de prendre des décisions éclairées.",
+                vision_3_title: "Fluidité & Coordination",
+                vision_3_desc: "Le Chef de Projet est le pont entre la technique, le business et le client. J'assure cette traduction permanente, fluidifie la communication et fédère les équipes autour d'un objectif commun sans nécessiter de lien hiérarchique direct.",
+                vision_4_title: "Amélioration Continue & Outils",
+                vision_4_desc: "Je maîtrise les outils modernes (Notion, Linear) et j'intègre l'Intelligence Artificielle à mes workflows. Mon but : automatiser ce qui n'a pas de valeur ajoutée pour concentrer l'équipe sur la résolution de problèmes complexes.",
                 
                 section_atouts_title: "MES ATOUTS & DÉFIS",
-                section_atouts_subtitle: "Transparence totale sur mon profil PMO Junior",
+                section_atouts_subtitle: "Transparence totale sur mon profil",
                 lbl_forces: "FORCES (ASSETS)",
-                lbl_weaknesses: "DÉFIS DE TRANSITION (REALITY CHECK)",
+                lbl_weaknesses: "POINTS D'ATTENTION (REALITY CHECK)",
                 
-                force_1: "<strong>Rigueur & Fiabilité</strong> — Je garantis des données exactes pour les comités.",
-                force_2: "<strong>Esprit Analytique</strong> — À l'aise avec la structuration de données (Excel/TCD).",
-                force_3: "<strong>Capacité de Synthèse</strong> — Rédiger des CR concis et des supports exécutifs (COMOP).",
-                force_4: "<strong>Coordination Transversale</strong> — Faire le lien entre IT, Métiers et Direction.",
-                force_5: "<strong>Proactivité</strong> — Toujours proposer une optimisation d'outil ou de process.",
-                force_6: "<strong>Aisance Relationnelle</strong> — Relancer les parties prenantes avec diplomatie.",
+                force_1: "<strong>Vision Transversale</strong> — Capacité à lier enjeux business et opérationnels.",
+                force_2: "<strong>Pragmatisme & ROI</strong> — Pilotage orienté création de valeur et efficacité.",
+                force_3: "<strong>Leadership d'Influence</strong> — Engager les équipes sans lien de subordination.",
+                force_4: "<strong>Autonomie (0 to 1)</strong> — Habitué à structurer des projets à partir d'une page blanche.",
+                force_5: "<strong>Communication Claire</strong> — Traduire les enjeux complexes en points synthétiques.",
+                force_6: "<strong>Esprit Data-Driven</strong> — Fonder les décisions sur l'analyse de données factuelles.",
                 
-                weak_1: "<strong>Outils spécifiques Entreprise</strong> — Je devrai m'adapter rapidement à votre instance Jira/PPM.",
-                weak_2: "<strong>Environnements hyper-techniques</strong> — Besoin d'un temps d'adaptation pour le jargon pur IT.",
-                weak_3: "<strong>Risque de sur-processisation</strong> — Je dois veiller à ne pas alourdir l'agilité avec trop de cadres.",
-                weak_4: "<strong>Posture d'accompagnement</strong> — En tant qu'entrepreneur, j'aime \"faire\". Le PMO doit souvent \"faire faire\".",
-                weak_5: "<strong>Appréhender la gouvernance interne</strong> — Chaque grand groupe a sa propre politique à maîtriser.",
-                weak_6: "<strong>Gestion du flou</strong> — Le PMO aime quand tout est clair ; il faut accepter l'incertitude du démarrage projet.",
+                weak_1: "<strong>Besoin de sens</strong> — Je m'investis pleinement si je comprends le \"Pourquoi\" d'un projet.",
+                weak_2: "<strong>Biais d'action</strong> — L'entrepreneur en moi veut avancer vite ; j'apprends à temporiser face aux process internes.",
+                weak_3: "<strong>Communication Directe</strong> — Je privilégie l'efficacité, nécessitant parfois d'adapter ma forme en milieu politique.",
+                weak_4: "<strong>L'art de la délégation</strong> — Ayant souvent porté mes projets seul, j'aiguise ma posture de \"faire faire\".",
+                weak_5: "<strong>Onboarding Outils</strong> — Je maîtrise Notion/Linear/IA, mais devrai m'adapter à vos instances spécifiques (ex: Jira).",
+                weak_6: "<strong>Gestion du flou</strong> — Je ressens le besoin de structurer rapidement les phases de forte incertitude.",
                 
-                section_skills_title: "COMPÉTENCES PMO",
-                section_skills_subtitle: "Mes outils et méthodologies",
-                skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Pilotage & Gouvernance",
-                skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Reporting & Data",
-                skill_cat_tech: "<i data-lucide='wrench' width='24' style='color: var(--teal);'></i> Outils & Logiciels",
+                section_skills_title: "COMPÉTENCES",
+                section_skills_subtitle: "Mes outils et expertises projet",
+                skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Pilotage & Stratégie",
+                skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Data & Analyse",
+                skill_cat_tools: "<i data-lucide='sparkles' width='24' style='color: var(--teal);'></i> Outils & IA",
+                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Bases Techniques",
                 skill_cat_lang: "<i data-lucide='globe' width='24' style='color: var(--teal);'></i> Langues",
-                skill_agile: "Méthodologie (Cycle V, Agile)",
-                skill_kpi: "Suivi des KPIs & Budget",
-                skill_risk: "Gestion des risques (RAID log)",
-                skill_team: "Coordination des équipes",
-                skill_scrum: "Amélioration continue des process",
-                skill_excel: "Excel avancé (TCD, Formules complexes)",
-                skill_dash: "Tableaux de bord (Dashboards)",
-                skill_data: "Consolidation de données",
+                skill_agile: "Méthodologies (Agile, Cycle V)",
+                skill_kpi: "Pilotage Budgétaire & KPI",
+                skill_risk: "Gestion des risques (RAID)",
+                skill_team: "Coordination Transversale",
+                skill_scrum: "Product Management (Notions)",
+                skill_excel: "Excel Avancé (TCD, Formules)",
+                skill_dash: "Reporting & Tableaux de bord",
+                skill_data: "Analyse et structuration de données",
                 skill_control: "Contrôle de gestion projet",
-                skill_prompt: "Prompting IA (Gain de temps)",
-                skill_workflows: "Notion / Outils collaboratifs",
-                skill_digital: "Jira / Confluence",
-                skill_css: "CSS (Compréhension)", // Optionnel si gardé de l'ancien
-                skill_liquid: "Liquid (Shopify)",   // Optionnel
-                skill_r: "R (bases)",             // Optionnel
-                skill_com: "Aisance écrite et orale (CR)",
-                skill_prob: "Esprit analytique & structuré",
-                skill_result: "Sens des responsabilités",
-                skill_listen: "Proactivité",
+                skill_prompt: "Prompting IA avancé",
+                skill_workflows: "Notion / Linear / Outils collaboratifs",
+                skill_digital: "Automatisation de workflows",
+                skill_css: "HTML/CSS (Compréhension)",
+                skill_liquid: "Liquid (Architecture E-commerce)",
+                skill_r: "Notions d'API",
+                skill_com: "Capacité de synthèse (CR)",
+                skill_prob: "Esprit analytique orienté solution",
+                skill_result: "Proactivité",
+                skill_listen: "Écoute active & Diplomatie",
                 skill_disc: "Rigueur & Fiabilité",
                 lang_fr: "🇫🇷 Français (Natif)",
-                lang_en: "🇬🇧 Anglais (B2)",
-                lang_es: "🇪🇸 Espagnol (A2)",
+                lang_en: "🇬🇧 Anglais (Pro - TOEIC C1 visé)",
+                lang_es: "🇪🇸 Espagnol (Notions)",
+                lang_fi: "🇫🇮 Finlande (mobilité)",
+                lang_ro: "🇷🇴 Roumanie (mobilité)",
                 
                 section_edu_title: "FORMATION ACADÉMIQUE",
                 section_edu_subtitle: "Mon socle théorique en Management de Projets",
-                search_placeholder: "Rechercher un cours (ex: MS Project, Risques, Finance...)",
+                search_placeholder: "Rechercher un cours (ex: Finance, Risques, Data...)",
                 
-                ambition_title: "MON OBJECTIF PMO",
-                ambition_subtitle: "Sécuriser, structurer et fluidifier",
-                ambition_text: "En tant que Junior PMO, mon objectif n'est pas de diriger seul des projets complexes dès le premier jour, mais d'en <strong>sécuriser la gouvernance et l'exécution</strong>. Je m'appuie sur la <strong>rigueur d'analyse</strong> que j'ai développée chez GRDF et l'<strong>approche orientée solution</strong> de mes projets entrepreneuriaux. Je suis structuré, à l'aise avec la Data (Excel/KPI) et capable de communiquer efficacement avec des parties prenantes exigeantes. Mon ambition : devenir un bras droit indispensable pour vos chefs de projet et directions.",
+                ambition_title: "MON ENGAGEMENT / MON PROFIL",
+                ambition_subtitle: "L'avantage d'un profil hybride",
+                ambition_text: "Pourquoi choisir un profil de chef de projet standard quand vous pouvez intégrer un hybride ? Mon parcours de 3 ans allie la <strong>rigueur d'exécution d'un grand groupe</strong> (GRDF) et l'<strong>agilité d'un créateur d'entreprise</strong> (Desrèves). Je cherche à piloter des projets ambitieux (rôle de Chef de Projet, Responsable de Projet ou PMO) où je pourrai mettre à profit ma structuration de la donnée, ma gestion des parties prenantes et mon orientation \"création de valeur\", tout en m'adaptant à vos spécificités métiers.",
                 
                 section_faq_title: "QUESTIONS FRÉQUENTES",
                 section_faq_subtitle: "Anticipons les détails logistiques",
                 faq_q1: "Quand êtes-vous disponible ?",
-                faq_a1: "Je serai diplômé de mon Master 2 et fin de contrat d'alternance fin juin. Je suis donc <strong>disponible dès début Juillet 2026</strong>.",
+                faq_a1: "Je serai diplômé de mon Master 2 et en fin de contrat d'alternance fin juin. Je suis donc <strong>disponible dès début Juillet 2026</strong>.",
                 faq_q2: "Quelle est votre zone de mobilité ?",
                 faq_a2: "Je cible prioritairement <strong>Valenciennes et sa périphérie</strong> ainsi que <strong>Lille et sa métropole</strong>. Je reste ouvert aux opportunités sur <strong>Paris</strong>. Véhiculé.",
                 faq_q3: "Quel type de contrat recherchez-vous ?",
-                faq_a3: "Je recherche un <strong>CDI</strong> pour m'investir sur le long terme en tant que PMO Junior, Project Management Officer ou Chef de Projet Junior.",
+                faq_a3: "Je recherche un <strong>CDI</strong> en gestion de projet (Chef de Projet, Responsable de Projet, PMO) pour m'investir sur le long terme au sein de vos équipes.",
                 faq_q4: "Télétravail : Full ou Hybride ?",
-                faq_a4: "Les deux me conviennent. Je dispose d'un <strong>setup complet et ergonomique</strong> (Bureau assis-debout, micro perche, double écran) pour une production de reporting optimale à distance.",
+                faq_a4: "Les deux me conviennent parfaitement. Je dispose d'un <strong>setup professionnel complet</strong> (bureau assis-debout, micro perche, double écran) garantissant une productivité et une communication optimales à distance.",
                 faq_q5: "Quelles sont vos prétentions salariales ?",
-                faq_a5: "Ouvert à la discussion selon le package global et les responsabilités, aligné sur le marché des profils Master 2 avec 3 ans d'expérience opérationnelle en gestion de projet/portefeuille.",
+                faq_a5: "Je suis ouvert à la discussion en fonction du niveau de responsabilités et du package global. Mes attentes sont alignées sur le marché pour un profil Master 2 justifiant de 3 années d'expérience opérationnelle solide.",
 
                 final_title: "Le mot de la fin",
-                final_text: "La réussite d'un projet repose autant sur la méthode que sur la fiabilité des informations transmises. Si vous cherchez un profil structuré, orienté analyse de données (Excel/Dashboards) et capable de fluidifier la coordination entre vos équipes, discutons-en.",
+                final_text: "La réussite d'un projet ne repose pas uniquement sur la création d'un rétroplanning, mais sur la capacité à fédérer des acteurs divers, à analyser la data de façon pertinente et à ne jamais perdre de vue la création de valeur finale. Si mon approche résonne avec les besoins de votre équipe, discutons-en de vive voix.",
 
                 footer_title: "Structurons vos projets ensemble",
-                footer_copyright: "© 2026 Florian Bouchart • PMO Portfolio"
+                footer_copyright: "© 2026 Florian Bouchart • Portfolio Gestion de Projet"
             },
             en: {
                 sober_mode: "Light",
                 availability_badge: "🟢 AVAILABLE JULY 2026",
-                hero_badge: "PMO • Project Manager • Governance & Data",
-                hero_description: "Project Management Master 2 graduate with a strong affinity for structuring, analytics, and data. I help companies <span class=\"highlight\">secure the execution</span> of complex projects, <span class=\"highlight\">coordinate stakeholders</span>, and produce <span class=\"highlight\">reliable reporting</span> for decision making.",
+                hero_badge: "PMO / JUNIOR PROJECT MANAGER - GOVERNANCE & DATA",
+                hero_description: "Project Management Master 2 graduate with 3 years of solid operational experience. I combine the <span class=\"highlight\">rigor of portfolio management (GRDF)</span>, analytical mastery of <span class=\"highlight\">Data</span>, and the boldness of an <span class=\"highlight\">entrepreneurial profile</span> to secure and steer the execution of your most strategic projects.",
                 btn_cv: "View Resume",
                 cv_link: "https://image2url.com/r2/default/documents/1771518176562-1cde6d94-055d-4ce0-8fb0-4f2b7de820a0.pdf",
                 nav_home: "Home",
                 nav_career: "Career",
                 nav_skills: "Strengths",
                 nav_edu: "Education",
-                nav_ambition: "Ambition",
+                nav_ambition: "Profile",
                 nav_contact: "Contact",
                 section_pro_title: "OPERATIONAL EXPERIENCE",
-                section_pro_subtitle: "Experience in project tracking, management, and reporting",
+                section_pro_subtitle: "What I've done and what it brings to your projects",
                 
-                exp_grdf_title: "Junior PMO & Portfolio Manager",
+                exp_grdf_title: "Project & Portfolio Manager (Apprenticeship)",
                 exp_grdf_period: "2023 - 2026 • 3 years",
-                exp_grdf_desc: "Support in steering a portfolio of concession projects. Updating KPIs (costs, deadlines), tracking risks, and producing monthly dashboards. Preparation of steering committees and coordination with local officials.",
-                tag_kpi: "Reporting & KPI",
-                tag_contracts: "Project Tracking",
-                tag_relations: "Stakeholder Coordination",
+                exp_grdf_desc: "Managing relationships with a portfolio of local authorities (municipalities, EPCI). Tracking concession contracts, analyzing investments and performance, and producing executive reports for decision-making bodies and elected officials.",
+                tag_kpi: "Reporting & Data",
+                tag_contracts: "Concession Tracking",
+                tag_relations: "Stakeholder Management",
                 tag_reporting: "Governance",
                 
-                exp_desreves_title: "Entrepreneurial Project Manager",
+                exp_desreves_title: "Founder & Entrepreneurial Project Manager",
                 exp_desreves_period: "2024 - Present",
                 exp_desreves_comp: "Desrèves - Clothing Brand",
-                exp_desreves_desc: "End-to-end management of a business creation project. Planning (Roadmap, Milestones), budget management, process optimization for sourcing, and supplier coordination. Strong ROI culture.",
-                tag_entrepreneurship: "Budget Management",
-                tag_product_design: "Planning (Roadmap)",
-                tag_web_dev: "Continuous Improvement",
+                exp_desreves_desc: "Complete lifecycle management of a business creation project. From strategic planning (roadmap, budget) to operational execution (sourcing, Liquid/CSS web dev, marketing launch). Strong ROI focus.",
+                tag_entrepreneurship: "Planning (Roadmap)",
+                tag_product_design: "Budget Management",
+                tag_web_dev: "Operational Execution",
                 tag_suppliers: "Supplier Coordination",
                 tag_marketing: "Marketing",
                 
-                exp_bde_title: "Associative Project Director",
+                exp_bde_title: "Associative Project Director (President)",
                 exp_bde_period: "2022 - 2025 • 3 years",
-                exp_bde_desc: "Structuring the activities of a Student Union. Resource allocation, strict budget monitoring, event risk management (RAID log), and progress reporting to university administration.",
+                exp_bde_desc: "Structuring and steering the student union. Cross-functional management of a volunteer team, strict budget control, and risk management (RAID) on high-traffic student events.",
                 tag_leadership: "Structuring",
                 tag_budget: "Budget Control",
-                tag_events: "Risk Management (RAID)",
+                tag_events: "Risk Management",
                 tag_team_mgmt: "Cross-functional Mgmt",
                 
-                exp_esport_title: "E-sport Project Coordinator",
+                exp_esport_title: "Project Coordinator (E-sport)",
                 exp_esport_period: "2018 - 2021 • From age 15",
                 exp_esport_comp: "Associative Structure",
-                exp_esport_desc: "Creation of a competitive structure. Logistical coordination of LAN trips, training schedule management, and communication between players and event organizers.",
+                exp_esport_desc: "Logistical coordination and team management in a competitive environment. Planning LAN travel, managing schedules, and developing strategic partnerships.",
                 tag_early_entrepreneurship: "Team Coordination",
                 tag_management: "Planning",
                 tag_event_org: "Event Logistics",
@@ -2168,126 +1557,129 @@
                 tag_innovation: "Agile Methodologies",
                 tag_design_thinking: "Inter-team Collaboration",
                 
-                section_vision_title: "MY PMO VISION",
-                section_vision_subtitle: "My convictions for making a project succeed",
+                section_vision_title: "MY PROJECT MANAGEMENT VISION",
+                section_vision_subtitle: "My convictions for ensuring your initiatives succeed",
                 vision_1_title: "Structure to Secure",
-                vision_1_desc: "I like bringing clarity where there is complexity. A well-structured project (planning, roles, milestones) has an 80% chance of succeeding on time and within budget.",
-                vision_2_title: "Data-Driven Decisions",
-                vision_2_desc: "A good PMO enlightens decision-makers. I design precise dashboards and reports (Excel, Power BI) so that Steering Committees (SteerCo) can act on facts, not intuition.",
-                vision_3_title: "Coordination & Fluidity",
-                vision_3_desc: "The PMO is the orchestrator. I ensure information flows between business, tech, and management. I follow up, summarize meetings, and ensure strict action tracking.",
-                vision_4_title: "Continuous Improvement",
-                vision_4_desc: "A process is never set in stone. I constantly analyze our working methods to propose new templates, automate non-value-added tasks, and optimize tracking tools (Jira, MS Project).",
+                vision_1_desc: "A successful project starts with a clear framework. My role is to bring this clarity (roadmap, milestones, roles) to secure execution, anticipate risks, and guarantee delivery on time and within budget.",
+                vision_2_title: "Data at the Heart of Decisions",
+                vision_2_desc: "I don't manage projects based on 'feelings'. I use analytical tools (Excel, Power BI) to turn raw data into strategic insights, allowing stakeholders to make informed decisions.",
+                vision_3_title: "Fluidity & Coordination",
+                vision_3_desc: "The Project Manager is the bridge between tech, business, and the client. I ensure this constant translation, streamline communication, and unite teams around a common goal without needing direct hierarchical authority.",
+                vision_4_title: "Continuous Improvement & Tools",
+                vision_4_desc: "I master modern tools (Notion, Linear) and integrate Artificial Intelligence into my workflows. My goal: automate tasks with no added value so the team can focus on solving complex problems.",
                 
-                section_atouts_title: "STRENGTHS & CHALLENGES",
-                section_atouts_subtitle: "Full transparency on my Junior PMO profile",
+                section_atouts_title: "MY STRENGTHS & CHALLENGES",
+                section_atouts_subtitle: "Full transparency on my profile",
                 lbl_forces: "STRENGTHS (ASSETS)",
-                lbl_weaknesses: "TRANSITION CHALLENGES (REALITY CHECK)",
+                lbl_weaknesses: "AREAS OF ATTENTION (REALITY CHECK)",
                 
-                force_1: "<strong>Rigor & Reliability</strong> — I guarantee accurate data for committees.",
-                force_2: "<strong>Analytical Mindset</strong> — Comfortable with data structuring (Excel/Pivot Tables).",
-                force_3: "<strong>Synthesis Capacity</strong> — Writing concise minutes and executive summaries.",
-                force_4: "<strong>Cross-functional Coordination</strong> — Bridging the gap between IT, Business, and Management.",
-                force_5: "<strong>Proactivity</strong> — Always proposing tool or process optimizations.",
-                force_6: "<strong>Interpersonal Skills</strong> — Following up with stakeholders diplomatically.",
+                force_1: "<strong>Cross-functional Vision</strong> — Ability to link business and operational challenges.",
+                force_2: "<strong>Pragmatism & ROI</strong> — Value-creation and efficiency oriented steering.",
+                force_3: "<strong>Influential Leadership</strong> — Engaging teams without subordination links.",
+                force_4: "<strong>Autonomy (0 to 1)</strong> — Used to structuring projects from a blank page.",
+                force_5: "<strong>Clear Communication</strong> — Translating complex issues into synthesized points.",
+                force_6: "<strong>Data-Driven Mindset</strong> — Basing decisions on factual data analysis.",
                 
-                weak_1: "<strong>Specific Enterprise Tools</strong> — I will need to quickly adapt to your specific Jira/PPM instance.",
-                weak_2: "<strong>Hyper-technical Environments</strong> — Needing adaptation time for pure IT jargon.",
-                weak_3: "<strong>Over-processing Risk</strong> — I must be careful not to weigh down agility with too many frameworks.",
-                weak_4: "<strong>Supporting Posture</strong> — As an entrepreneur, I like to \"do\". A PMO often has to \"make others do\".",
-                weak_5: "<strong>Internal Governance</strong> — Each large group has its own political landscape to master.",
-                weak_6: "<strong>Managing Ambiguity</strong> — PMOs like clarity; I must learn to accept the uncertainty of project kick-offs.",
+                weak_1: "<strong>Need for Meaning</strong> — I commit fully when I understand the 'Why' behind a project.",
+                weak_2: "<strong>Action Bias</strong> — The entrepreneur in me wants to move fast; I am learning to balance this with internal processes.",
+                weak_3: "<strong>Direct Communication</strong> — I prioritize efficiency, sometimes needing to adapt my approach in political environments.",
+                weak_4: "<strong>The Art of Delegation</strong> — Having often carried projects alone, I am sharpening my 'make it happen through others' posture.",
+                weak_5: "<strong>Tools Onboarding</strong> — I master Notion/Linear/AI but will need to adapt to your specific instances (e.g., Jira).",
+                weak_6: "<strong>Managing Ambiguity</strong> — I feel the need to quickly structure phases of high uncertainty.",
                 
-                section_skills_title: "PMO SKILLS",
-                section_skills_subtitle: "My tools and methodologies",
-                skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Steering & Governance",
-                skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Reporting & Data",
-                skill_cat_tech: "<i data-lucide='wrench' width='24' style='color: var(--teal);'></i> Tools & Software",
+                section_skills_title: "SKILLS",
+                section_skills_subtitle: "My tools and project expertise",
+                skill_cat_mgmt: "<i data-lucide='briefcase' width='24' style='color: var(--orange);'></i> Steering & Strategy",
+                skill_cat_data: "<i data-lucide='bar-chart-3' width='24' style='color: var(--purple);'></i> Data & Analysis",
+                skill_cat_tools: "<i data-lucide='sparkles' width='24' style='color: var(--teal);'></i> Tools & AI",
+                skill_cat_tech: "<i data-lucide='code' width='24' style='color: var(--pink);'></i> Technical Basics",
                 skill_cat_lang: "<i data-lucide='globe' width='24' style='color: var(--teal);'></i> Languages",
-                skill_agile: "Methodology (V-Model, Agile)",
-                skill_kpi: "KPI & Budget Tracking",
-                skill_risk: "Risk Management (RAID log)",
-                skill_team: "Team Coordination",
-                skill_scrum: "Process Continuous Improvement",
-                skill_excel: "Advanced Excel (Pivot Tables, Complex formulas)",
-                skill_dash: "Dashboards",
-                skill_data: "Data Consolidation",
+                skill_agile: "Methodologies (Agile, V-Model)",
+                skill_kpi: "Budget & KPI Management",
+                skill_risk: "Risk Management (RAID)",
+                skill_team: "Cross-functional Coordination",
+                skill_scrum: "Project Governance",
+                skill_excel: "Advanced Excel (Pivot Tables, Formulas)",
+                skill_dash: "Reporting & Dashboards",
+                skill_data: "Data Analysis and Structuring",
                 skill_control: "Project Management Control",
-                skill_prompt: "AI Prompting (Time-saving)",
-                skill_workflows: "Notion / Collaborative Tools",
-                skill_digital: "Jira / Confluence",
-                skill_css: "CSS (Understanding)",
-                skill_liquid: "Liquid (Shopify)",
-                skill_r: "R (basics)",
-                skill_com: "Written and Oral Fluency (Minutes)",
-                skill_prob: "Analytical & Structured Mind",
-                skill_result: "Sense of Responsibility",
-                skill_listen: "Proactivity",
+                skill_prompt: "Advanced AI Prompting",
+                skill_workflows: "Notion / Linear / Collaborative Tools",
+                skill_digital: "Workflow Automation",
+                skill_css: "HTML/CSS (Understanding)",
+                skill_liquid: "Liquid (E-commerce Architecture)",
+                skill_r: "API Concepts",
+                skill_com: "Synthesis Capacity (Minutes)",
+                skill_prob: "Solution-oriented Analytical Mind",
+                skill_result: "Proactivity",
+                skill_listen: "Active Listening & Diplomacy",
                 skill_disc: "Rigor & Reliability",
                 lang_fr: "🇫🇷 French (Native)",
-                lang_en: "🇬🇧 English (B2)",
-                lang_es: "🇪🇸 Spanish (A2)",
+                lang_en: "🇬🇧 English (Pro - Target TOEIC C1)",
+                lang_es: "🇪🇸 Spanish (Basics)",
+                lang_fi: "🇫🇮 Finland (mobility)",
+                lang_ro: "🇷🇴 Romania (mobility)",
                 
                 section_edu_title: "ACADEMIC BACKGROUND",
                 section_edu_subtitle: "My theoretical foundation in Project Management",
-                search_placeholder: "Search for a course (e.g., MS Project, Risks, Finance...)",
+                search_placeholder: "Search for a course (e.g., Finance, Risks, Data...)",
                 
-                ambition_title: "MY PMO OBJECTIVE",
-                ambition_subtitle: "Secure, structure, and fluidify",
-                ambition_text: "As a Junior PMO, my goal isn't to lead complex projects alone from day one, but to <strong>secure their governance and execution</strong>. I rely on the <strong>analytical rigor</strong> I developed at GRDF and the <strong>solution-oriented approach</strong> of my entrepreneurial projects. I am structured, comfortable with Data (Excel/KPI), and capable of communicating effectively with demanding stakeholders. My ambition: to become an indispensable right-hand for your project managers and directors.",
+                ambition_title: "MY COMMITMENT / MY PROFILE",
+                ambition_subtitle: "The advantage of a hybrid profile",
+                ambition_text: "Why choose a standard project manager profile when you can integrate a hybrid one? My 3-year background combines the <strong>execution rigor of a large group</strong> (GRDF) and the <strong>agility of a business creator</strong> (Desrèves). I am looking to steer ambitious projects (Project Manager, Project Lead, or PMO roles) where I can leverage my data structuring, stakeholder management, and value-creation focus, while adapting to your specific business needs.",
                 
                 section_faq_title: "FAQ",
-                section_faq_subtitle: "Logistical details anticipated",
+                section_faq_subtitle: "Anticipating logistical details",
                 faq_q1: "When are you available?",
-                faq_a1: "I will graduate from my Master 2 and finish my apprenticeship contract in late June. I am <strong>available from early July 2026</strong>.",
+                faq_a1: "I will graduate from my Master 2 and finish my apprenticeship contract in late June. I am therefore <strong>available from early July 2026</strong>.",
                 faq_q2: "What is your geographic mobility?",
-                faq_a2: "I primarily target <strong>Valenciennes and its surroundings</strong> as well as <strong>Lille metropolitan area</strong>. I am open to opportunities in <strong>Paris</strong>. I have a car.",
+                faq_a2: "I primarily target <strong>Valenciennes and its surroundings</strong> as well as the <strong>Lille metropolitan area</strong>. I am open to opportunities in <strong>Paris</strong>. I have a car.",
                 faq_q3: "What type of contract are you looking for?",
-                faq_a3: "I am looking for a <strong>Permanent Contract (CDI)</strong> to invest myself long-term as a Junior PMO, Project Management Officer, or Junior Project Manager.",
+                faq_a3: "I am looking for a <strong>Permanent Contract (CDI)</strong> in project management (Project Manager, Project Lead, PMO) to invest myself long-term within your teams.",
                 faq_q4: "Remote Work: Full or Hybrid?",
-                faq_a4: "Both work for me. I have a <strong>complete and ergonomic setup</strong> (Standing desk, boom mic, dual monitors) for optimal remote reporting production.",
+                faq_a4: "Both suit me perfectly. I have a <strong>complete professional setup</strong> (standing desk, boom mic, dual monitors) guaranteeing optimal productivity and communication remotely.",
                 faq_q5: "What are your salary expectations?",
-                faq_a5: "Open to discussion depending on the global package and responsibilities, aligned with the market for Master 2 profiles with 3 years of operational experience in project/portfolio management.",
+                faq_a5: "I am open to discussion based on the level of responsibilities and the overall package. My expectations are aligned with the market for a Master 2 profile with 3 years of solid operational experience.",
 
                 final_title: "Final Word",
-                final_text: "The success of a project relies as much on method as on the reliability of the information transmitted. If you are looking for a structured profile, oriented towards data analysis (Excel/Dashboards) and capable of streamlining coordination between your teams, let's talk.",
+                final_text: "The success of a project does not rely solely on creating a Gantt chart, but on the ability to unite diverse stakeholders, analyze data relevantly, and never lose sight of the final value creation. If my approach resonates with your team's needs, let's talk in person.",
 
                 footer_title: "Let's structure your projects together",
-                footer_copyright: "© 2026 Florian Bouchart • PMO Portfolio"
+                footer_copyright: "© 2026 Florian Bouchart • Project Management Portfolio"
             }
         };
 
         // DETAILS POUR POPUP (Le texte explicatif détaillé)
         const detailsData = {
             fr: {
-                force_1: "Je m'assure que les chiffres remontés aux instances dirigeantes (COPIL/COMOP) sont toujours vérifiés et incontestables.",
-                force_2: "Je sais manipuler de gros volumes de données, créer des tableaux croisés dynamiques (TCD) et utiliser des formules pour en tirer des informations clés.",
-                force_3: "Je sais rédiger des comptes rendus de réunions efficaces et préparer des supports PowerPoint visuels qui vont à l'essentiel.",
-                force_4: "J'ai l'habitude de naviguer entre différents départements. Je comprends les enjeux des développeurs autant que ceux de la direction.",
-                force_5: "Si je repère un tableau Excel mal conçu ou un process qui fait perdre du temps, je propose immédiatement un nouveau template ou une macro pour l'optimiser.",
-                force_6: "Savoir relancer quelqu'un pour une deadline sans froisser la relation est une compétence clé que je pratique au quotidien.",
+                force_1: "Je comprends les contraintes techniques, les enjeux business et les besoins utilisateurs. Je sers de traducteur pour aligner tout le monde.",
+                force_2: "Je sais arbitrer. Dans un projet, tout est important, mais tout n'est pas urgent. Je priorise ce qui apporte le plus de valeur immédiate.",
+                force_3: "J'ai dirigé des bénévoles (BDE) et des joueurs (E-sport). On ne les manage pas par l'ordre, mais par l'adhésion à une vision commune.",
+                force_4: "Je n'attends pas qu'on me tienne la main. J'ai créé ma boîte, mon site, mes partenariats. Je sais me débrouiller et trouver des solutions.",
+                force_5: "Je sais synthétiser des informations complexes (CR de réunions, présentations) pour permettre aux décideurs de trancher rapidement.",
+                force_6: "Je ne fais pas pour faire. Je fonde mes actions sur des résultats mesurables (KPIs, analyses) pour évaluer l'impact.",
                 
-                weak_1: "Chaque entreprise a sa propre configuration Jira, Confluence ou MS Project. Il me faudra un onboarding pour maîtriser vos workflows internes.",
-                weak_2: "Dans un PMO IT, je pourrais mettre quelques semaines à absorber l'architecture technique des projets suivis.",
-                weak_3: "Le PMO aime les process, mais je dois m'assurer de ne pas rajouter de la bureaucratie là où les équipes ont besoin de rapidité.",
-                weak_4: "J'aime résoudre les problèmes moi-même. En PMO, je dois m'assurer que c'est le chef de projet qui avance, mon rôle est de lui donner les outils pour.",
-                weak_5: "Comprendre 'qui valide quoi' et 'qui est le vrai sponsor' dans un grand groupe prend du temps au début d'une mission.",
-                weak_6: "Au lancement d'un projet, beaucoup d'éléments sont instables (budget, scope). Je dois apprendre à naviguer cette zone d'incertitude avant de tout border."
+                weak_1: "Je ne peux pas m'investir à 100% dans une tâche 'parce qu'on me l'a demandé'. J'ai besoin de comprendre la stratégie globale pour être efficace.",
+                weak_2: "L'entrepreneur en moi veut parfois corriger le problème tout de suite. Je travaille à ralentir pour passer plus de temps à analyser le problème et respecter les process de validation.",
+                weak_3: "Je vais droit au but pour gagner du temps. J'apprends à mettre plus de formes dans mes communications, particulièrement avec des parties prenantes sensibles.",
+                weak_4: "Ayant souvent porté mes projets seul (solopreneur), je dois me discipliner pour déléguer efficacement et faire confiance au process de l'équipe.",
+                weak_5: "Chaque entreprise a sa propre configuration ou ses outils internes (ex: Jira). Il me faudra un onboarding pour maîtriser vos workflows spécifiques.",
+                weak_6: "Au lancement d'un projet, beaucoup d'éléments sont instables (budget, périmètre). Je dois apprendre à naviguer plus sereinement cette zone d'incertitude initiale."
             },
             en: {
-                force_1: "I ensure that the numbers reported to steering committees (SteerCo) are always verified and indisputable.",
-                force_2: "I know how to handle large volumes of data, create Pivot Tables, and use formulas to extract key information.",
-                force_3: "I can write effective meeting minutes and prepare visual PowerPoint presentations that get straight to the point.",
-                force_4: "I am used to navigating between different departments. I understand the challenges of developers as much as those of management.",
-                force_5: "If I spot a poorly designed Excel sheet or a time-wasting process, I immediately propose a new template or macro to optimize it.",
-                force_6: "Knowing how to follow up with someone for a deadline without damaging the relationship is a key skill I practice daily.",
+                force_1: "I understand technical constraints, business stakes, and user needs. I act as a translator to align everyone.",
+                force_2: "I know how to arbitrate. In a project, everything is important, but not everything is urgent. I prioritize immediate value.",
+                force_3: "I led volunteers (Student Union) and players (E-sport). You don't manage them by order, but by adherence to a common vision.",
+                force_4: "I don't wait to be held by the hand. I created my company, my site, my partnerships. I know how to figure things out.",
+                force_5: "I know how to synthesize complex information (minutes, presentations) to allow decision-makers to decide quickly.",
+                force_6: "I don't do things just to do them. I base my actions on measurable results (KPIs, analysis) to evaluate impact.",
                 
-                weak_1: "Every company has its own Jira, Confluence, or MS Project setup. I will need onboarding to master your internal workflows.",
-                weak_2: "In an IT PMO, it might take me a few weeks to absorb the technical architecture of the projects being tracked.",
-                weak_3: "PMOs love processes, but I must ensure I don't add bureaucracy where teams need speed.",
-                weak_4: "I like to solve problems myself. In a PMO role, I must ensure the project manager moves forward; my role is to give them the tools to do so.",
-                weak_5: "Understanding 'who validates what' and 'who the real sponsor is' in a large group takes time at the beginning of an assignment.",
-                weak_6: "At project kick-off, many elements are unstable (budget, scope). I must learn to navigate this zone of uncertainty before locking everything down."
+                weak_1: "I can't invest 100% in a task just 'because I was told to'. I need to understand the global strategy to be truly effective.",
+                weak_2: "The entrepreneur in me wants to fix the problem right away. I work on slowing down to analyze the problem and respect validation processes.",
+                weak_3: "I get straight to the point to save time. I am learning to frame my communications better, especially with sensitive stakeholders.",
+                weak_4: "Having often carried projects alone (solopreneur), I must discipline myself to delegate effectively and trust the team's process.",
+                weak_5: "Every company has its own internal tools (e.g., Jira). I will need onboarding to master your specific workflows.",
+                weak_6: "At project kick-off, many elements are unstable (budget, scope). I must learn to navigate this initial zone of uncertainty more calmly."
             }
         };
 
